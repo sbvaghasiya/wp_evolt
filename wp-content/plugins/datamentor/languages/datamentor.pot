@@ -1,0 +1,563 @@
+# Copyright (C) 2018
+# This file is distributed under the same license as the  package.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Datamentor\n"
+"Report-Msgid-Bugs-To: info@flickdevs.com\n"
+"POT-Creation-Date: 2022-11-19 10:25+0530\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: OceanWP\n"
+"Language-Team: AuburnForest <mzchowdhury.us@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _esc_attr__;esc_attr_x;esc_attr_e;esc_html__;"
+"esc_html_e;esc_html_x;__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: datamentor.php:66 datamentor.php:129 datamentor.php:138
+#: datamentor.php:160
+msgid "DataMentor"
+msgstr ""
+
+#: datamentor.php:129
+msgid ""
+"widgets not working because you need to activate the Elementor plugin."
+msgstr ""
+
+#: datamentor.php:130
+msgid "Activate Elementor Now"
+msgstr ""
+
+#: datamentor.php:138
+msgid "widgets not working because you need to install the Elemenor plugin"
+msgstr ""
+
+#: datamentor.php:139
+msgid "Install Elementor Now"
+msgstr ""
+
+#: datamentor.php:160
+msgid ""
+"widgets not working because you are using an old version of Elementor."
+msgstr ""
+
+#: datamentor.php:161
+msgid "Update Elementor Now"
+msgstr ""
+
+#: datamentor.php:190
+msgid ""
+"Hi, you are now using <strong>DataMentor</strong> plugin. I would really "
+"appreciate it if you could give me the five star to our plugin."
+msgstr ""
+
+#: datamentor.php:190
+msgid ""
+"<a href=\"https://wordpress.org/support/plugin/datamentor/reviews/?"
+"filter=5#new-post\" target=\"_blank\" class=\"rating-link\"><strong> "
+"Okay, you deserve it </strong></a>"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:25
+msgid "DM Data Table"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:45
+msgid "Header"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:52
+msgid "Column Name"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:54
+#: includes/elements/datamentor-table.php:169
+#: includes/elements/datamentor-table.php:170
+#: includes/elements/datamentor-table.php:171
+#: includes/elements/datamentor-table.php:172
+msgid "Table Header"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:60
+msgid "Column Span"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:68
+msgid "Enable Header Icon"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:70
+#: includes/elements/datamentor-table.php:1221
+msgid "Yes"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:71
+#: includes/elements/datamentor-table.php:1222
+msgid "No"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:78
+msgid "Header Icon Type"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:82
+#: includes/elements/datamentor-table.php:353
+#: includes/elements/datamentor-table.php:488
+#: includes/elements/datamentor-table.php:588
+msgid "None"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:86
+#: includes/elements/datamentor-table.php:102
+#: includes/elements/datamentor-table.php:492
+msgid "Icon"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:90
+#: includes/elements/datamentor-table.php:114
+#: includes/elements/datamentor-table.php:496
+msgid "Image"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:126
+msgid "Image Size(px)"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:137
+msgid "SVG Image Size(px)"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:150
+#: includes/elements/datamentor-table.php:714
+msgid "CSS Class"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:157
+#: includes/elements/datamentor-table.php:724
+msgid "CSS ID"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:185
+#: includes/elements/datamentor-table.php:676
+#: includes/elements/datamentor-table.php:688
+msgid "Content"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:192
+msgid "Row Type"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:197
+msgid "Row"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:198
+msgid "Column"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:204
+msgid "Col Span"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:206
+#: includes/elements/datamentor-table.php:219
+msgid "Default: 1 (optional)."
+msgstr ""
+
+#: includes/elements/datamentor-table.php:217
+msgid "Row Span"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:230
+msgid "Content Type"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:234
+msgid "Textarea"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:238
+msgid "Editor"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:242
+msgid "Templates"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:246
+msgid "Button"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:259
+msgid "Button Text"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:260
+msgid "Click here"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:269
+msgid "Button Link"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:286
+msgid "Button Alignment"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:290
+#: includes/elements/datamentor-table.php:797
+#: includes/elements/datamentor-table.php:947
+#: includes/elements/datamentor-table.php:1185
+msgid "Left"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:294
+#: includes/elements/datamentor-table.php:801
+#: includes/elements/datamentor-table.php:951
+#: includes/elements/datamentor-table.php:1189
+msgid "Center"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:298
+#: includes/elements/datamentor-table.php:805
+#: includes/elements/datamentor-table.php:955
+#: includes/elements/datamentor-table.php:1193
+msgid "Right"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:302
+msgid "Justified"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:319
+msgid "Button Text Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:333
+msgid "Button Background Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:348
+msgid "Button Border"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:354
+msgid "Solid"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:355
+msgid "Double"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:356
+msgid "Dotted"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:357
+msgid "Dashed"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:358
+msgid "Groove"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:368
+msgid "Button Border Radius"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:391
+msgid "Button Border Width"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:406
+msgid "Button Border Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:420
+msgid "Button Text Hover Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:434
+msgid "Button Hover Background Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:448
+msgid "Button Hover Border Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:462
+msgid "Button Padding"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:484
+msgid "Button Icon Type"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:509
+msgid "Button Icon"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:522
+msgid "Button Image"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:535
+msgid "Button Image Size(px)"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:547
+msgid "Button Icon Position"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:551
+msgid "Before"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:552
+msgid "After"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:564
+msgid "Button Icon Spacing"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:581
+msgid "Button Text Decoration"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:584
+#: includes/elements/datamentor-table.php:603
+#: includes/elements/datamentor-table.php:623
+msgid "Default"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:585
+msgid "Underline"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:586
+msgid "Overline"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:587
+msgid "Line Through"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:600
+msgid "Button Text Transform"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:604
+msgid "Uppercase"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:605
+msgid "Lowercase"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:606
+msgid "Capatilize"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:607
+#: includes/elements/datamentor-table.php:633
+#: includes/elements/datamentor-table.php:858
+#: includes/elements/datamentor-table.php:980
+#: includes/elements/datamentor-table.php:1139
+msgid "Normal"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:619
+msgid "Button Font Weight"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:624
+msgid "100"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:625
+msgid "200"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:626
+msgid "300"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:627
+msgid "400"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:628
+msgid "500"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:629
+msgid "600"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:630
+msgid "700"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:631
+msgid "800"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:632
+msgid "900"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:634
+msgid "Bold"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:646
+msgid "Button Id"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:652
+msgid "Add your custom id WITHOUT the Pound key. e.g: my-button-id"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:654
+msgid ""
+"Please make sure the ID is unique and not used elsewhere on the page this "
+"form is displayed. This field allows <code>A-z 0-9</code> & underscore "
+"chars without spaces."
+msgstr ""
+
+#: includes/elements/datamentor-table.php:663
+msgid "Choose Template"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:673
+#: includes/elements/datamentor-table.php:685
+msgid "Cell Text"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:697
+msgid "Link"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:759
+msgid "General Style"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:766
+#: includes/elements/datamentor-table.php:1229
+msgid "Width"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:791
+msgid "Alignment"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:822
+msgid "Header Style"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:830
+msgid "Header Border Radius"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:846
+#: includes/elements/datamentor-table.php:1052
+msgid "Padding"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:862
+#: includes/elements/datamentor-table.php:899
+#: includes/elements/datamentor-table.php:1253
+msgid "Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:876
+#: includes/elements/datamentor-table.php:913
+#: includes/elements/datamentor-table.php:1267
+msgid "Background Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:888
+#: includes/elements/datamentor-table.php:924
+#: includes/elements/datamentor-table.php:1044
+#: includes/elements/datamentor-table.php:1292
+msgid "Border"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:895
+#: includes/elements/datamentor-table.php:1063
+#: includes/elements/datamentor-table.php:1159
+msgid "Hover"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:942
+msgid "Title Alignment"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:973
+msgid "Content Style"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:984
+msgid "ODD Cell"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:991
+#: includes/elements/datamentor-table.php:1067
+msgid "Color ( Odd Row )"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1002
+#: includes/elements/datamentor-table.php:1077
+msgid "Background ( Odd Row )"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1013
+#: includes/elements/datamentor-table.php:1087
+msgid "Even Cell"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1021
+#: includes/elements/datamentor-table.php:1094
+msgid "Color ( Even Row )"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1032
+#: includes/elements/datamentor-table.php:1105
+msgid "Background Color (Even Row)"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1127
+msgid "Link Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1145
+#: includes/elements/datamentor-table.php:1165
+msgid "Text Color"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1180
+msgid "Content Alignment"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1210
+msgid "Responsive Options"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1218
+msgid "Enable Responsive Table"
+msgstr ""
+
+#: includes/elements/datamentor-table.php:1219
+msgid ""
+"If enabled, table header will be automatically responsive for mobile."
+msgstr ""

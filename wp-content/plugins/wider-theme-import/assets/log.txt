@@ -1,0 +1,121 @@
+Import demo successfully!!!.
+Import media successfully!
+Failed to import pa_weight 0.5 Kg
+Failed to import pa_weight 1 Kg
+Failed to import pa_weight 2 Kg
+Failed to import pa_weight 5 Kg
+Failed to import pa_color Black
+Failed to import pa_color Green
+Failed to import pa_color Orange
+Failed to import pa_color Red
+Failed to import Demos : Invalid post type organio-mega-menu
+Failed to import Elements : Invalid post type organio-mega-menu
+Failed to import Shop : Invalid post type organio-mega-menu
+Failed to import Form 1 : Invalid post type mc4wp-form
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import pa_weight"0.5 Kg"
+Failed to import pa_weight"1 Kg"
+Failed to import pa_weight"2 Kg"
+Failed to import pa_weight"5 Kg"
+Failed to import pa_color"Black"
+Failed to import pa_color"Green"
+Failed to import pa_color"Orange"
+Failed to import pa_color"Red"
+Failed to import Main Contact Form : Invalid post type wpcf7_contact_form
+Failed to import Subscribe : Invalid post type wpcf7_contact_form
+Import demo successfully!!!.
+Import theme options "custom_theme_options" successfully!
+Set home page successfully!
+Import menus successfully!
+Import wp options successfully!
+Import widget successfully!
+Crop images successfully!
+Import term meta successfully!
+done all
