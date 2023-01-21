@@ -492,7 +492,7 @@ if ( ! function_exists( 'evolt_post_meta' ) ) :
         $post_author_on = evolt_get_option( 'post_author_on', true );
         $post_date_on = evolt_get_option( 'post_date_on', true );
         if($post_author_on || $post_date_on || $post_category_on) : ?>
-            <ul class="entry-meta evolt-item-meta">
+            <ul class="sasasas sentry-meta evolt-item-meta">
                 <?php if($post_date_on) : ?>
                     <li class="item-date"><i class="caseicon-clock"></i><?php echo get_the_date(); ?></li>
                 <?php endif; ?>
@@ -520,7 +520,7 @@ if ( ! function_exists( 'evolt_archive_meta' ) ) :
                     <li class="item-author"><i class="caseicon-user-alt"></i><?php echo esc_html__('By', 'evolt'); ?> <?php the_author_posts_link(); ?></li>
                 <?php endif; ?>
                 <?php if($archive_categories_on) : ?>
-                    <li class="item-category"><?php the_terms( get_the_ID(), 'category', '<i class="caseicon-tags-alt"></i>', ', ', '' ); ?></li>
+                    <li class="item-category"><?php the_terms( get_the_ID(), 'category', '', ', ', '' ); ?></li>
                 <?php endif; ?>
             </ul>
         <?php endif; }
