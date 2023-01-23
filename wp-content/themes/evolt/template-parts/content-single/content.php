@@ -10,11 +10,7 @@ $post_social_share_on = evolt_get_option( 'post_social_share_on', false );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('single-hentry'); ?>>
     <div class="entry-blog">
-        <?php if (has_post_thumbnail()) {
-            echo '<div class="entry-featured">'; ?>
-                <?php the_post_thumbnail('evolt-post'); ?>
-            <?php echo '</div>';
-        } ?>
+       
         <div class="entry-body">
 
             <?php evolt_post_meta(); ?>

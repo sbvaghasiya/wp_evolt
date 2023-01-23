@@ -500,7 +500,7 @@ if ( ! function_exists( 'evolt_post_meta' ) ) :
                     <li class="item-author"><i class="caseicon-user-alt"></i><?php echo esc_html__('By', 'evolt'); ?> <?php the_author_posts_link(); ?></li>
                 <?php endif; ?>
                 <?php if($post_category_on) : ?>
-                    <li class="item-category"><?php the_terms( get_the_ID(), 'category', '<i class="caseicon-tags-alt"></i>', ', ', '' ); ?></li>
+                    <li class="item-category"><?php the_terms( get_the_ID(), 'category', '', ', ', '' ); ?></li>
                 <?php endif; ?>
             </ul>
         <?php endif; }

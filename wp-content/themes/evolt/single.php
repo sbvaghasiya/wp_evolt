@@ -5,6 +5,8 @@
  * @package eVolt
  */
 get_header();
+
+
 $sidebar_pos = evolt_get_option( 'post_sidebar_pos', 'right' );
 $show_sidebar_post = evolt_get_page_option( 'show_sidebar_post', false );
 if ($show_sidebar_post){
@@ -13,6 +15,15 @@ if ($show_sidebar_post){
 ?>
 <div class="container content-container">
     <div class="row content-row">
+         <?php if (has_post_thumbnail()) {
+            echo '<div class="article-head">'; 
+            echo '<div class="entry-featured">'; 
+            ?>
+                <?php the_post_thumbnail('evolt-post'); ?>
+            <?php
+            echo '</div>';
+            echo '</div>';
+        } ?>
         <div id="primary" <?php evolt_primary_class( $sidebar_pos, 'content-area' ); ?>>
             <main id="main" class="site-main">
                 <?php
