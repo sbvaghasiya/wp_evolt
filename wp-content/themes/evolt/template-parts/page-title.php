@@ -25,6 +25,9 @@ if($pagetitle == 'show') : ?>
     <div id="pagetitle" class="page-title bg-image <?php if($custom_pagetitle && $curve_display == 'hide' ) { echo 'curve-hide'; } ?>">
         <div class="container">
             <div class="page-title-inner">
+                <div class="main_title_">
+                    <span>Latest Blog</span>
+                </div>
                 <div class="page-title-holder">
                     <?php if(!empty($sub_title)) : ?>
                         <h6 class="page-sub-title"><?php echo esc_attr($sub_title); ?></h6>

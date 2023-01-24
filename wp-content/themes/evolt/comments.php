@@ -26,7 +26,7 @@ if ( post_password_required() ) {
                 <?php
                     $comment_count = get_comments_number();
                     if ( 1 === intval($comment_count) ) {
-                        echo esc_html__( '1 Comment', 'evolt' );
+                        echo esc_html__( 'Comment (1)', 'evolt' );
                     } else {
                         echo esc_html__('Comments', 'evolt').' ('.esc_attr( $comment_count ).')';
                     }
