@@ -1910,7 +1910,7 @@ function evolt_post_nav_default() {
                     $prev_img_url = wp_get_attachment_image_src($prev_img_id, 'thumbnail');
                     ?>
                     <div class="nav-item nav-post-prev">
-                        <a class="nav-post-label" href="<?php echo esc_url(get_permalink( $previous_post->ID )); ?>"><i class="caseicon-double-chevron-left"></i><?php echo esc_html__('Previous Post', 'evolt'); ?></a>
+                        <a class="nav-post-label" href="<?php echo esc_url(get_permalink( $previous_post->ID )); ?>"><i class="caseicon-angle-arrow-left"></i><?php echo esc_html__('Previous Post', 'evolt'); ?></a>
                         <div class="nav-post-holder">
                             <?php if(!empty($prev_img_id)) : ?>
                                 <div class="nav-post-img">
@@ -1928,7 +1928,7 @@ function evolt_post_nav_default() {
                     $next_img_url = wp_get_attachment_image_src($next_img_id, 'thumbnail');
                     ?>
                     <div class="nav-item nav-post-next">
-                        <a class="nav-post-label" href="<?php echo esc_url(get_permalink( $next_post->ID )); ?>"><?php echo esc_html__('Next Post', 'evolt'); ?><i class="caseicon-double-chevron-right"></i></a>
+                        <a class="nav-post-label" href="<?php echo esc_url(get_permalink( $next_post->ID )); ?>"><?php echo esc_html__('Next Post', 'evolt'); ?><i class="caseicon-angle-arrow-right"></i></a>
                         <div class="nav-post-holder">
                             <div class="nav-post-meta">
                                 <a href="<?php echo esc_url(get_permalink( $next_post->ID )); ?>"><?php echo get_the_title( $next_post->ID ); ?></a>

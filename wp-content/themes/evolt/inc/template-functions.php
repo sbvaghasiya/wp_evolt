@@ -374,14 +374,16 @@ function evolt_comment_list( $comment, $args, $depth ) {
 		    <div class="comment-inner">
 		        <?php if ($args['avatar_size'] != 0) echo get_avatar($comment, 90); ?>
 		        <div class="comment-content">
-		            <h4 class="comment-title">
-		            	<?php printf( '%s', get_comment_author_link() ); ?>
-		            </h4>
-		            <div class="comment-meta">
-		            	<span class="comment-date">
-	                        <?php echo get_comment_date().' - '.get_comment_time(); ?>
-	                    </span>
-		            </div>
+					<div class="comment_title_with_date">
+						<h4 class="comment-title">
+							<?php printf( '%s', get_comment_author_link() ); ?>
+						</h4>
+						<div class="comment-meta">
+							<span class="comment-date">
+								<?php echo get_comment_date().' - '.get_comment_time(); ?>
+							</span>
+						</div>
+					</div>		            
 		            <div class="comment-text"><?php comment_text(); ?></div>
 		            <div class="comment-reply">
 						<?php comment_reply_link( array_merge( $args, array(
