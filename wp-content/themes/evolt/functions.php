@@ -284,8 +284,8 @@ if ( ! function_exists( 'evolt_fonts_url' ) ) :
 			$fonts[] = 'Poppins:400,500,600,700';
 		}
 		
-		if ( 'off' !== _x( 'on', 'Lora font: on or off', 'evolt' ) ) {
-			$fonts[] = 'Lora:400,500,600,700';
+		if ( 'off' !== _x( 'on', 'Jost font: on or off', 'evolt' ) ) {
+			$fonts[] = 'Jost:400,500,600,700';
 		}
 
 		if ( 'off' !== _x( 'on', 'Barlow font: on or off', 'evolt' ) ) {

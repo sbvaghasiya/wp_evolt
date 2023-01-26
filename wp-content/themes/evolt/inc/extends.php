@@ -79,13 +79,13 @@ function evolt_body_classes( $classes )
     }
 
     $body_default_font = evolt_get_option( 'body_default_font', 'Barlow' );
-    $heading_default_font = evolt_get_option( 'heading_default_font', 'Lora' );
+    $heading_default_font = evolt_get_option( 'heading_default_font', 'Jost' );
 
     if($body_default_font == 'Barlow') {
         $classes[] = 'body-default-font';
     }
 
-    if($heading_default_font == 'Lora') {
+    if($heading_default_font == 'Jost') {
         $classes[] = 'heading-default-font';
     }
 

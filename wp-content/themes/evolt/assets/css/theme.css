@@ -1888,7 +1888,7 @@
 /* =============== NEW CUSTOM ADDED CSS END ================== */
 
 .ft-heading {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 html {
   box-sizing: border-box;
@@ -1951,7 +1951,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 700;
 }
 .heading-default-font h1, .heading-default-font h2, .heading-default-font h3, .heading-default-font h4, .heading-default-font h5, .heading-default-font h6, .heading-default-font .h1, .heading-default-font .h2, .heading-default-font .h3, .heading-default-font .h4, .heading-default-font .h5, .heading-default-font .h6, .heading-default-font .ft-h {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 h1, .h1 {
   font-size: 52px;
@@ -3243,7 +3243,7 @@ form .select2-container--default .select2-selection .select2-selection__placehol
   text-transform: uppercase;
   font-size: 16px;
   color: #282828;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 #ui-datepicker-div .ui-datepicker-header .ui-datepicker-title span {
   display: inline-block;
@@ -5095,7 +5095,7 @@ form .select2-container--default .select2-selection .select2-selection__placehol
   }
   #evolt-header-wrap.evolt-header-layout4 .evolt-main-menu > li > a {
     font-size: 18px;
-    font-family: 'Lora', sans-serif;
+    font-family: 'Jost', sans-serif;
     padding-left: 16px;
   }
   #evolt-header-wrap.evolt-header-layout4 .evolt-main-menu > li > a:hover {
@@ -7524,7 +7524,7 @@ ul.menu ul {
   /* font-size: 15px;
   color: #191919;
   font-weight: 700;
-  font-family: 'Lora', sans-serif; */
+  font-family: 'Jost', sans-serif; */
   margin: 6px 0;
   margin-right: 10px;
   font-family: 'Jost';
@@ -9000,7 +9000,7 @@ ul.product-categories {
   margin-bottom: 23px;
   display: block;
   font-weight: 700;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 .widget_block .widget-content .wp-block-search__label:before, .widget_block .widget-content .wp-block-group__inner-container > h2:before {
   content: '';
@@ -9091,7 +9091,7 @@ ul.product-categories {
   padding: 12px 0;
   position: relative;
   border-bottom: 1px solid #ececf0;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: normal;
   position: relative;
 }
@@ -9139,7 +9139,7 @@ ul.product-categories {
   padding: 12px 0;
   position: relative;
   border-bottom: 1px solid #ececf0;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: normal;
   position: relative;
 }
@@ -11887,7 +11887,7 @@ ul.product-categories {
   transform: rotate(-45deg);
   top: 25px;
   left: -48px;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   text-align: center;
   text-transform: uppercase;
 }
@@ -11972,7 +11972,7 @@ ul.product-categories {
   text-align: center;
   z-index: 2;
   font-size: 30px;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 700;
   color: #fff;
   background-color: #1f201c;
@@ -12437,7 +12437,7 @@ ul.product-categories {
   padding: 14px 35px;
   display: block;
   background-color: #f4f4f4;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   position: relative;
 }
 @media screen and (max-width: 1199px) {
@@ -13320,7 +13320,7 @@ ul.product-categories {
   left: 50%;
   font-size: 28px;
   font-weight: 600;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   -webkit-transform: translate(-50%, -50%);
   -khtml-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -14586,7 +14586,7 @@ ul.product-categories {
   font-size: 36px;
   font-weight: 700;
   color: #222;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   display: inline-flex;
   align-items: flex-start;
   line-height: 1;
@@ -14647,7 +14647,7 @@ ul.product-categories {
   color: #dedede;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   position: absolute;
   z-index: -1;
   left: 50%;
@@ -14805,7 +14805,7 @@ ul.product-categories {
 .evolt-infobox-carousel2 .item--readmore a {
   font-size: 26px;
   font-weight: 700;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   display: block;
   width: 39px;
   height: 39px;
@@ -15370,7 +15370,7 @@ ul.product-categories {
   border-radius: 0px;
 }
 .evolt-landing-showcase .evolt-showcase .evolt-showcase-title {
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   margin-top: 22px;
   font-size: 18px;
 }
@@ -16905,7 +16905,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   line-height: 1.25;
   margin-top: 4px;
   margin-bottom: 6px;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 .woocommerce #secondary .widget_products ul li .product-title a:hover {
   color: #1f201c;
@@ -17740,7 +17740,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   margin-right: 16px;
   margin-top: 10px;
   color: #191919;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 .woocommerce nav.woocommerce-pagination ul.page-numbers .page-numbers.next, .woocommerce nav.woocommerce-pagination ul.page-numbers .page-numbers.prev {
   font-size: 0px;
@@ -17991,7 +17991,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   margin-bottom: 0;
   font-weight: 700;
   color: #191919;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
 }
 .single-product #primary div.product form.cart .reset_variations, .single-product > div.product form.cart .reset_variations {
   font-weight: 700;
@@ -18267,7 +18267,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   font-size: 26px;
   line-height: 1;
   color: #191919;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   font-weight: 700;
 }
 .single-product #primary div.product .entry-summary .price ins, .single-product > div.product .entry-summary .price ins {
@@ -18364,7 +18364,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   position: relative;
   background-color: #fff;
   z-index: 1;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   background-color: #f4f4f4;
 }
 .single-product #primary div.product .woocommerce-tabs ul.wc-tabs li.active > a, .single-product > div.product .woocommerce-tabs ul.wc-tabs li.active > a, .single-product #primary div.product .woocommerce-tabs ul.wc-tabs li a:hover, .single-product > div.product .woocommerce-tabs ul.wc-tabs li a:hover {
@@ -18557,7 +18557,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
 }
 .single-product #primary div.product .woocommerce-tabs .woocommerce-Tabs-panel--reviews #reviews ol.commentlist li.review .meta .woocommerce-review__author, .single-product > div.product .woocommerce-tabs .woocommerce-Tabs-panel--reviews #reviews ol.commentlist li.review .meta .woocommerce-review__author {
   color: #222;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Jost', sans-serif;
   display: block;
   line-height: 1;
   margin-bottom: 4px;

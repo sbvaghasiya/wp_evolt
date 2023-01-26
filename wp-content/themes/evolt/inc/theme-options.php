@@ -1153,10 +1153,10 @@ Redux::setSection($opt_name, array(
             'type'     => 'select',
             'title'    => esc_html__('Heading Default Font', 'evolt'),
             'options'  => array(
-                'Lora'  => esc_html__('Default', 'evolt'),
+                'Jost'  => esc_html__('Default', 'evolt'),
                 'Google-Font'  => esc_html__('Google Font', 'evolt'),
             ),
-            'default'  => 'Lora',
+            'default'  => 'Jost',
         ),
         array(
             'id'          => 'font_h1',
