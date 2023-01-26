@@ -222,7 +222,7 @@ function evolt_primary_class( $sidebar_pos, $extra_class = '' )
                 break;
 
             case 'right':
-                $class[] = 'content-has-sidebar float-left col-xl-9 col-lg-9 col-md-12 col-sm-12';
+                $class[] = 'content-has-sidebar float-left col-xl-9 col-lg-9 col-md-12 col-sm-12 pl-0';
                 break;
 
             default:
@@ -261,11 +261,11 @@ function evolt_secondary_class( $sidebar_pos, $extra_class = '' )
         $class = array(trim($extra_class));
         switch ($sidebar_pos) {
             case 'left':
-                $class[] = 'widget-has-sidebar sidebar-fixed col-xl-3 col-lg-3 col-md-12 col-sm-12';
+                $class[] = 'widget-has-sidebar sidebar-fixed col-xl-3 col-lg-3 col-md-12 col-sm-12 px-0';
                 break;
 
             case 'right':
-                $class[] = 'widget-has-sidebar sidebar-fixed col-xl-3 col-lg-3 col-md-12 col-sm-12';
+                $class[] = 'widget-has-sidebar sidebar-fixed col-xl-3 col-lg-3 col-md-12 col-sm-12 px-0';
                 break;
 
             default:
@@ -494,7 +494,7 @@ if ( ! function_exists( 'evolt_post_meta' ) ) :
         if($post_author_on || $post_date_on || $post_category_on) : ?>
             <ul class="sasasas sentry-meta evolt-item-meta">
                 <?php if($post_date_on) : ?>
-                    <li class="item-date"><i class="caseicon-clock"></i><?php echo get_the_date(); ?></li>
+                    <li class="item-date"><i class="caseicon-clock mt-1"></i><?php echo get_the_date(); ?></li>
                 <?php endif; ?>
                 <?php if($post_author_on) : ?>
                     <li class="item-author"><i class="caseicon-user-alt"></i><?php echo esc_html__('By', 'evolt'); ?> <?php the_author_posts_link(); ?></li>
@@ -514,7 +514,7 @@ if ( ! function_exists( 'evolt_archive_meta' ) ) :
         if($archive_author_on || $archive_categories_on || $archive_date_on) : ?>
             <ul class="entry-meta evolt-item-meta">
                 <?php if($archive_date_on) : ?>
-                    <li class="item-date"><i class="caseicon-clock"></i><?php echo get_the_date(); ?></li>
+                    <li class="item-date"><i class="caseicon-clock mt-1"></i><?php echo get_the_date(); ?></li>
                 <?php endif; ?>
                 <?php if($archive_author_on) : ?>
                     <li class="item-author"><i class="caseicon-user-alt"></i><?php echo esc_html__('By', 'evolt'); ?> <?php the_author_posts_link(); ?></li>

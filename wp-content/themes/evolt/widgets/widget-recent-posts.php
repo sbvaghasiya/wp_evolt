@@ -85,8 +85,8 @@ class Recent_Posts_Widget extends WP_Widget
                             esc_attr( get_the_title() ),
                             get_the_title()
                         ); ?>
-                        <div class="item-date">
-                            <i class="caseicon-calendar-alt"></i>
+                        <div class="item-date" >
+                            <!-- <i class="caseicon-calendar-alt"></i> -->
                             <?php echo get_the_date(); ?>
                         </div>
                     </div>
