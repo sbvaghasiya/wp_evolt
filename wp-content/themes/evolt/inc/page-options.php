@@ -335,6 +335,14 @@ function evolt_page_options_register( $metabox ) {
 				'force_output' => true
 			),
 			array(
+				'id'           => 'custom_subtitle',
+				'type'         => 'textarea',
+				'title'        => esc_html__( 'SubTitle', 'evolt' ),
+				'subtitle'     => esc_html__( 'Use custom subtitle for this page. The default subtitle will be used on document title.', 'evolt' ),
+				'required'     => array( 0 => 'custom_pagetitle', 1 => '=', 2 => 'show' ),
+				'force_output' => true
+			),
+			array(
 	            'id'       => 'ptitle_bg',
 	            'type'     => 'background',
 	            'background-color'     => true,
