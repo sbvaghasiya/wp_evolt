@@ -14,7 +14,7 @@
       top: 152px;
     }
 }
-#secondary .widget {
+.widget {
     margin-bottom: 52px;
     &:last-child {
         margin-bottom: 0;
@@ -604,6 +604,13 @@ ul.product-categories {
     }
 }
 
+.widget_search {
+    .widget-content{
+        padding: 0;
+        border:none !important;
+    }   
+}
+
 .widget_search .search-form {
     position: relative;
     .search-submit {
@@ -1157,6 +1164,12 @@ ul.product-categories {
 
 
 /* Widget Block */
+.widget{
+    .widget-content{
+        border: 1px solid #CCB3B3;
+        padding: 0 18px 25px;
+    }
+}
 .widget_block {
     .widget-content {
         .wp-block-search__label, .wp-block-group__inner-container > h2 {

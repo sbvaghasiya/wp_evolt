@@ -129,7 +129,7 @@
         border-top: none;
     }
     &:hover {
-        @include box-shadow(0 0 42px rgba(#000000, 0.12));
+        @include box-shadow(0 0 42px rgba(#00000000, 0.12));
         .entry-featured img {
             -webkit-filter: grayscale(95%);
             filter: grayscale(95%);
@@ -215,22 +215,22 @@
             }
             &.fb-social {
                 // background-color: #3b5998;
-                background-color: rgb(158 111 111 / 15%);	
+                background-color: rgba(#9E6F6F, 0.15%);	
                 color: #9E6F6F;
             }
             &.tw-social {
                 // background-color: #55acee;
-                background-color: rgb(158 111 111 / 15%);	
+                background-color: rgba(#9E6F6F, 0.15%);	
                 color: #9E6F6F;
             }
             &.pin-social {
                 // background-color: #bd081c;
-                background-color: rgb(158 111 111 / 15%);	
+                background-color: rgba(#9E6F6F, 0.15%);	
                 color: #9E6F6F;
             }
             &.lin-social {
                 // background-color: #0077B5;
-                background-color: rgb(158 111 111 / 15%);	
+                background-color: rgba(#9E6F6F, 0.15%);	
                 color: #9E6F6F;
             }
         }
@@ -278,17 +278,18 @@
         border-radius: 3px;	
         line-height: 35px;
         text-align: center;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 700;
         display: inline-block;
-        margin-right: 16px;
+        margin-right: 10px;
         margin-top: 10px;
         color: #555555;	
-        //font-family: 'jost';
+        font-family: 'jost';
         @include font-family-heading($heading_default_font);
         &.current, &:hover {
             color: #fff;
-            background-color: $primary_color;
+            // background-color: $primary_color;
+            background-color: #9E6F6F;
         }
         &.next, &.prev {
             font-size: 12px;

@@ -5,7 +5,7 @@
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	@include box-shadow(0 -3px 7px rgba(#0c0c0c, 0.2));
+	@include box-shadow(0 -3px 7px rgba(#0c0c0c00, 0.2));
 	&:before {
 		content: '';
 		position: absolute;
@@ -14,7 +14,7 @@
 		z-index: -1;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(#000000, 0.6);
+		background-color: rgba(#fff, 1);
 	}
 	.page-title {
 		color: #fff;
@@ -42,6 +42,34 @@
 	}
 	.page-title-inner {
 		@include transition(.3s cubic-bezier(.24,.74,.58,1));
+		.main_title_ {
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 500;
+			font-size: 17px;
+			line-height: 25px;
+			letter-spacing: 0.02em;
+			text-transform: uppercase;
+			color: #9E6F6F;
+			z-index: 99;
+			position: relative;
+			width: 100%;
+			span {
+				padding-bottom: 5px;
+				padding-left: 50px;
+				position: relative;
+				display: inline-block;
+				&:before {
+					content: '';
+					width: 40px;
+					height: 1px;
+					position: absolute;
+					left: 0;
+					bottom: 18px;
+					background-color: #9E6F6F;
+				  }
+			  }
+		  }
 	}
 	.container {
 		max-width: 960px;
@@ -67,19 +95,46 @@
 		margin-left: 40px;	
 		position: relative;	
 		padding: 0.25em;	
-		background-color: rgb(85 85 85 / 10%);	
+		background-color: rgba(#555555, 0.1%);
 		color: #555555;
 		@media #{$max-sm} {
 			font-size: 15px;
 		}
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 30px;
+			background-color: rgba(#555555, 0.1%);
+			-webkit-clip-path: polygon(100% 0, 100% 100%, 0% 100%, 50% 50%, 0% 0%);
+			clip-path: polygon(100% 0, 100% 100%, 0% 100%, 50% 50%, 0% 0%);
+			transform: translateX(-100%);
+			z-index: -1;
+		}
 		&:after {
-			content: "\f114";
-			margin: 0 12px;
-			color: inherit;
-			font-family: Caseicon;
-			color: $primary_color;
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 100%;
+			height: 100%;
+			width: 3em;
+			background-color: rgba(#555555, 0.1%);
+			-webkit-clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+			clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+			margin: 0;
 			font-size: 10px;
 		}
+		&:last-child::after, &:last-child::before{
+			background-color: rgba(#9E6F6F, 0.1%) !important;
+		}
+		&:last-child{
+			color: #9E6F6F;
+			background-color: rgba(#9E6F6F, 0.1%);
+		}		
 		a {
 			color: inherit;
 			&:hover {
