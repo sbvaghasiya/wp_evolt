@@ -16162,7 +16162,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   padding: 0;
 }
 .single-post #primary.col-12, .page-template-blog-classic #primary.col-12, .tax-portfolio-category #primary.col-12 {
-  max-width: 840px;
+  max-width: 100%;
   margin: auto;
 }
 .tax-portfolio-category .entry-meta li {
@@ -16231,7 +16231,7 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
   }
 }
 @media screen and (max-width: 991px) {
-  /* =============== NEW CUSTOM ADDED CSS STAR ================== */  #primary + #secondary {
+  /* =============== NEW CUSTOM ADDED CSS START ================== */  #primary + #secondary {
     margin-top: 80px;
   }
 }
@@ -16316,6 +16316,9 @@ body.admin-bar .mfp-wrap .mfp-container .mfp-content .mfp-close {
 #search-2 .widget-content {
   border: none !important;
   padding: 0;
+}
+.entry-featured {
+  /* =============== NEW CUSTOM ADDED CSS END ================== */
 }
 .entry-featured img {
   width: 100%;
@@ -25455,3 +25458,4 @@ body.rtl .scroll-top {
   left: 0;
   /* End Footer */
 }
+

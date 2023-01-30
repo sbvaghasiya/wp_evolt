@@ -117,7 +117,7 @@ body {
 
 .single-post, .page-template-blog-classic, .tax-portfolio-category {
   #primary.col-12 {
-    max-width: 840px;
+    max-width: 100%;
     margin: auto;
   }
 }
@@ -208,7 +208,7 @@ body {
 }
 
 
-/* =============== NEW CUSTOM ADDED CSS STAR ================== */
+/* =============== NEW CUSTOM ADDED CSS START ================== */
 
 .evolt-item-meta {
   .item-date{
@@ -325,3 +325,5 @@ body {
     width: 100%;
   }
 }
+
+/* =============== NEW CUSTOM ADDED CSS END ================== */
