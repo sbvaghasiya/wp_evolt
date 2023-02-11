@@ -305,8 +305,16 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 										<span>Color :</span>
 										<span>Red</span>
 									</p>
+									<div class="product-quantity">
+										<div class="quantity buttons_added">
+											<input type="button" value="-" class="minus">
+											<input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+											<input type="button" value="+" class="plus">
+										</div>
+										<p class="price">$15.00</p>
+									</div>
 									
-								 	<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity d-flex justify-content-between">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?> 
+								 	<!-- <?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity d-flex justify-content-between">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>  -->
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 											'<a href="%s" class="remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="caseicon-close"></i></a>',
@@ -338,6 +346,38 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 
 			</ul><!-- end product list -->
         </div>
+		<div class="widget_may_also">
+			<h1 class="widget_may_also_title">You may also like</h1>
+			<div class="widget_may_also_card">
+				<div class="row">
+					<div class="col-6">
+						<div class="card-image">
+							<img src="http://localhost/wp_evolt/wp-content/uploads/2023/02/Mask-group-24.png" alt="" class="img-fluid">
+						</div>
+						<div class="card-contact">
+							<p class="mb-0">Silk Flower design top</p>
+							<div class="d-flex card-contact-price">
+								<span>$20.00</span>
+								<span>$20.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-6">
+						<div class="card-image">
+							<img src="http://localhost/wp_evolt/wp-content/uploads/2023/02/Mask-group-23.png" alt="" class="img-fluid">
+						</div>
+						<div class="card-contact">
+							<p class="mb-0">Silk Flower design top</p>
+							<div class="d-flex card-contact-price">
+								<span>$20.00</span>
+								<span>$20.00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
         <?php if ( ! WC()->cart->is_empty() ) : ?>
 			<div class="widget_shopping_cart_footer">
 				<p class="total d-flex justify-content-between">

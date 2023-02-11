@@ -117,6 +117,7 @@
 		font-size: 17px;
 		line-height: 25px;
 		color: #377322;
+		padding-top: 15px;
 		span{
 			font-weight: 500;
 		}
@@ -124,10 +125,11 @@
 	.widget_shopping_head {
 		/*display: flex;*/
 		background-color: #FFFFFF;
-		padding: 16px 30px;
-		margin-top: -30px;
-		margin-left: -30px;
-		margin-right: -30px;
+		// padding: 16px 30px;
+		padding: 25px 25px;
+		// margin-top: -30px;
+		// margin-left: -30px;
+		// margin-right: -30px;
 		/*margin-bottom: 20px;*/
 		align-items: center;
 		.evolt-close {
@@ -137,22 +139,23 @@
 	}
 	.evolt-close {
 		position: absolute;
-		top: 11px;
-		right: 30px;
+		top: 25px;
+		right: 25px;
 		z-index: 999;
 	}
 	.widget_shopping_cart {
-		padding: 30px 0px 0 25px;
+		
 		width: 450px;
-		background-color: #f9f9f9;
+		
 		.widget_shopping_cart_content {
 			height: 100%;
-			min-height: 400px;
-			max-height: 400px;
+			min-height: 300px;
+			max-height: 300px;
 			overflow-y: auto;
+			background-color: #f9f9f9;
 			ul.cart_list {
 				li {
-					padding: 20px 15px 15px 0;
+					padding: 25px;
 					display: flex;
 					flex-wrap: nowrap;
 					border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -192,8 +195,8 @@
 				}
 				.cart-product-image {
 				    width: 100%;
-					min-width: 100px;
-					max-width: 100px;
+					min-width: 125px;
+					max-width: 125px;
 					margin-right: 15px;
 					a {
 						display: inline-block;
@@ -201,7 +204,7 @@
 					img {
 						margin: 0;
 						width: inherit;
-						@include border-radius(5px);
+						@include border-radius(0px);
 						@include box-shadow(0 3px 5px rgba(0, 0, 0, 0.08));
 					}
 				}
@@ -218,7 +221,6 @@
 						font-size: 17px;
 						line-height: 25px;
 						color: #333333;
-					    
 						margin-bottom: 3px;
 						a {
 							color: #333333;
@@ -232,18 +234,88 @@
 						font-style: normal;
 						font-weight: 400;
 						font-size: 16px;
-						line-height: 23px;
+						line-height: 26px;
 						color: #555555;
 					}
 					.quantity {
 						font-size: 14px;
 					}
+					.product-quantity{
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						width: 100%;
+						.quantity {
+							.input-text.qty {
+								width: 100%;
+								max-width: 40px;
+								max-height: 35px;
+								min-height: 35px;
+								padding: 0 5px;
+								text-align: center;
+								background-color: $background-color_1;
+								border: 1px solid transparent;
+							}
+							input {
+								&::-webkit-outer-spin-button {
+									-webkit-appearance: none;
+									-moz-appearance: none;
+									margin: 0;
+								}
+								&::-webkit-inner-spin-button {
+									-webkit-appearance: none;
+									-moz-appearance: none;
+									margin: 0;
+								}
+							}
+						}
+						.quantity.buttons_added {
+							position: relative;
+							width: 100%;
+							max-width: 100px;
+							height: 100%;
+							max-height: 35px;
+							min-height: 35px;
+							border: 1px solid #B0B0B0;
+							input {
+								display: inline-block;
+								margin: 0;
+								vertical-align: top;
+								box-shadow: none;
+							}
+							.minus {
+								font-size: 19px;
+								max-width: 30px;
+								background-color: transparent;
+								border: 1px solid transparent;
+								cursor: pointer;
+							}
+							.plus {
+								font-size: 19px;
+								max-width: 30px;
+								background-color: transparent;
+								border: 1px solid transparent;
+								cursor: pointer;
+							}
+						}
+						.price{
+							font-family: 'Jost';
+							font-style: normal;
+							font-weight: 500;
+							font-size: 18px;
+							line-height: 26px;
+							text-transform: capitalize;
+							color: #333333;
+							margin-bottom: 0px;
+						}
+					}
+					
 				}
 				a.remove_from_cart_button {
 					opacity: 0;
 					position: absolute;
-					top: 20%;
-					@include transform(translate(-20px, -20%));
+					top: 25%;
+					@include transform(translate(-20px, -25%));
 					right:20px;
 					width: 18px;
 					height: 18px;
@@ -261,18 +333,79 @@
 				}
 			}
 		}
+		.widget_may_also{
+			padding: 25px;
+			.widget_may_also_title{
+				font-family: 'Jost';
+				font-style: normal;
+				font-weight: 500;
+				font-size: 22px;
+				line-height: 32px;
+				text-transform: capitalize;
+				color: #333333;
+				padding-bottom: 15px;
+				margin: 0;
+			}
+			.widget_may_also_card{
+				.card-image{
+					height: 100%;
+					max-height: 200px;
+					min-height: 200px;
+					img{
+						width: 100%;
+						height: 100%;
+						max-width: 190px;
+						
+						object-fit: cover;
+					}
+				}
+
+				.card-contact{
+					p{
+						font-family: 'Jost';
+						font-style: normal;
+						font-weight: 400;
+						font-size: 16px;
+						line-height: 23px;
+						letter-spacing: 0.02em;
+						text-transform: capitalize;
+						padding: 10px 0 6px 0;
+					}
+					.card-contact-price{
+						font-family: 'Jost';
+						font-style: normal;
+						font-weight: 500;
+						font-size: 17px;
+						line-height: 25px;
+						text-transform: capitalize;
+						& span:first-child{
+							color: #333333;
+						}
+						& span:last-child{
+							color: #B0B0B0;
+							text-decoration-line: line-through;
+							font-size: 15px;
+							line-height: 22px;
+							align-items: baseline;
+							padding-left: 10px;
+						}
+					}
+					
+				}
+			}
+		}
 		.widget_shopping_cart_footer {
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			right: 0;
 			padding: 30px 30px 55px;
-			background-color: #fff;
+			background-color: #F9F9F9;
 			p.total {
 				border: none;
-				border-top: 1px solid rgba(0,0,0,0.1);
+				/*border-top: 1px solid rgba(0,0,0,0.1);
 				padding-top: 15px;
-				padding-bottom: 0;
+				padding-bottom: 0;*/
 				font-family: 'Jost';
 				font-style: normal;
 				font-weight: 500;
@@ -286,15 +419,12 @@
 			p.buttons {
 				margin: 0;
 				.btn {
-					
 					/*margin-right: 0;
 					font-size: 14px;*/
 					font-family: 'Jost';
 					font-style: normal;
 					font-weight: 500;
 					font-size: 17px;
-					width: 100%;
-					max-width: 180px;
 					text-transform: uppercase;
 					@include border-radius(0px);
 					+ .btn {
@@ -305,6 +435,7 @@
 						background-color: #9E6F6F;
 						border: 2px solid transparent;
 						line-height: 44px;
+						width: 100%;
 						
 						&:hover{
 							border: 2px solid #9E6F6F;
@@ -317,6 +448,7 @@
 					    background-color: transparent !important;
 					    color: #9E6F6F;
 					    line-height: 44px;
+						width: 100%;
 						&:hover{
 							background-color: #9E6F6F !important;
 							color: #fff !important;
@@ -331,7 +463,7 @@
 }
 
 .admin-bar .evolt-widget-cart-sidebar {
-	top: 32px;
+	top: 25px;
 }
 
 @media #{$min-lg} {
