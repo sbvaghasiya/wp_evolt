@@ -226,7 +226,7 @@ function evolt_primary_class( $sidebar_pos, $extra_class = '' )
                 break;
 
             default:
-                $class[] = 'content-full-width col-12';
+                $class[] = 'content-full-width col-12 px-0';
                 break;
         }
 

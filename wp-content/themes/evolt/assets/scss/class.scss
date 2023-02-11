@@ -132,6 +132,15 @@
         background: linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,.3) 100%);
         @include transform(skewX(-25deg));
     }
+    img{
+        width: 100%;
+        max-width: 90px;
+        min-width: 90px;
+        height: 100%;
+        max-height: 90px;
+        min-height: 90px;
+        object-fit: cover;
+    }
 }
 .grid-item-inner:hover, .single-hentry:hover, .entry-brief:hover {
     .image-effect-white a:before {

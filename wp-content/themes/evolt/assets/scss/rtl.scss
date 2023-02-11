@@ -319,6 +319,11 @@ body.rtl {
   #content .widget_product_categories ul li a .count, #content .widget_categories ul li a .count, #content .widget_nav_menu ul li a .count, #content .widget_pages ul li a .count, #content .widget_archive ul li a .count, #content .widget_meta ul li a .count, #content .widget_recent_entries ul li a .count {
     float: left;
   }
+  #content .widget_categories ul li a:hover .count{
+    background-color: transparent !important;
+    color: #9E6F6F !important;
+  }
+
   span.count.left {
     float: left;
   }

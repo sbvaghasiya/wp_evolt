@@ -231,24 +231,45 @@ dl + h2 + ul {
 }
 
 blockquote {
-  background-color: #edf0f2;
-  padding: 24px 57px 24px 37px;
-  font-size: 19px;
-  line-height: 30px;
-  color: $dark_color;
-  font-weight: 700;
-  position: relative;
-  margin-top: 40px;
-  margin-bottom: 34px;
+  padding: 24px 50px 24px 60px;	
+  position: relative;	
+  margin-top: 40px;	
+  margin-bottom: 34px;	
+  font-family: 'Jost';	
+  font-style: normal;	
+  font-weight: 500;	
+  font-size: 19px;	
+  line-height: 27px;	
+  letter-spacing: 0.02em;	
+  color: #333333;	
+  width: 100%;	
+  max-width:fit-content;
   @include font-family-heading($heading_default_font);
   &:before {
     content: '';
-    width: 5px;
+    background-image: url("../images/blockquotetion.jpg");	
+    width: 100%;	
+    max-width: 45px;
     height: 100%;
+    max-height: 45px;
     position: absolute;
     top: 0;
     left: 0;
+    background-repeat: no-repeat;
     background-color: $primary_color;
+  }
+  &:after{
+    content: '';	
+    background-image: url("../images/blockquotetion.jpg");	
+    transform: rotate(180deg);	
+    width: 100%;	
+    max-width: 45px;	
+    height: 100%;	
+    max-height: 45px;	
+    position: absolute;	
+    bottom: 0;	
+    right: 0;	
+    background-repeat: no-repeat;
   }
   @media #{$max-sm} {
     padding-left: 20px;
