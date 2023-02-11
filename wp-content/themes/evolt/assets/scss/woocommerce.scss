@@ -2358,7 +2358,7 @@ body.woocommerce-cart {
 	}
 	#customer_details {
 		padding: 0 15px;
-		width: 50%;
+		width: 70%;
 		@media #{$max-sm} {
 			width: 100%;
 		}
@@ -2435,13 +2435,14 @@ body.woocommerce-cart {
 			text-transform: capitalize;
 		}
 		.evolt-checkout-order-review {
-			width: 50%;
+			width: 30%;
 			padding: 0 15px;
 			@media #{$max-sm} {
 				width: 100%;
 			}
 		}
 		#order_review {
+			background-color: rgba(158, 111, 111, 0.1);
 			th {
 				font-weight: 500;
 				vertical-align: middle !important;
@@ -2453,8 +2454,9 @@ body.woocommerce-cart {
 				border-left: 1px solid #ebebeb;
 			}
 			.woocommerce-checkout-review-order-table {
-				margin-bottom: 60px;
-				border-right: none;
+				// margin-bottom: 60px;
+				padding: 30px 20px 0;
+				border: none;
 				border-top: none;
 				th {
 					font-weight: 700;
@@ -2468,10 +2470,10 @@ body.woocommerce-cart {
 					color: $primary_color;
 				}
 			}
-			#payment {
-				background-color: #fff;
+			#payment {				
+				background-color: rgba(158, 111, 111, 0.01);
 				border: none;
-				@include box-shadow(0px 6px 30px rgba(0, 0, 0, 0.08));
+				// @include box-shadow(0px 6px 30px rgba(0, 0, 0, 0.08));
 				.about_paypal {
 					margin-left: 10px;
 				}
@@ -2515,6 +2517,7 @@ body.woocommerce-cart {
 				#place_order {
 					float: none;
 					margin-top: 10px;
+					width: 100%;
 				}
 				div.payment_box {
 					background-color: #f8f8f8;
