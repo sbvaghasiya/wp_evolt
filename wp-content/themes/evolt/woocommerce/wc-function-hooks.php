@@ -187,19 +187,24 @@ function evolt_woocommerce_sg_product_title() {
 		</div>
 <?php endif; }
 
-add_action( 'woocommerce_single_product_summary', 'evolt_woocommerce_sg_product_rating', 10 );
-function evolt_woocommerce_sg_product_rating() { global $product; ?>
-	<div class="woocommerce-sg-product-rating">
-		<?php woocommerce_template_single_rating(); ?>
-	</div>
-<?php }
-
-add_action( 'woocommerce_single_product_summary', 'evolt_woocommerce_sg_product_price', 15 );
+add_action( 'woocommerce_single_product_summary', 'evolt_woocommerce_sg_product_price', 10 );
 function evolt_woocommerce_sg_product_price() { ?>
 	<div class="woocommerce-sg-product-price">
 		<?php woocommerce_template_single_price(); ?>
 	</div>
 <?php }
+
+add_action( 'woocommerce_single_product_summary', 'evolt_woocommerce_sg_product_rating', 15 );
+function evolt_woocommerce_sg_product_rating() { global $product; ?>
+	<div class="woocommerce-sg-product-rating d-flex justify-content-between align-items-center">
+		<?php woocommerce_template_single_rating(); ?>
+		<p class="mb-0 product-stock"> 
+			<span class="product-stock-label">Available :</span>
+			<span class="product-stock-in">In Stock</span>
+		</p>
+	</div>
+<?php }
+
 
 add_action( 'woocommerce_single_product_summary', 'evolt_woocommerce_sg_product_excerpt', 20 );
 function evolt_woocommerce_sg_product_excerpt() { ?>
@@ -259,8 +264,9 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
     <div class="widget_shopping_cart">
     	<div class="widget_shopping_head">
 	    	<div class="widget_shopping_title">
-	    		<?php echo esc_html__( 'Cart', 'evolt' ); ?>
+	    		<?php echo esc_html__( 'your Cart', 'evolt' ); ?>
 	    	</div>
+			<p class="widget_shopping_text mb-0">Congratulations! You have got <span>FREE Shipping</span> </p>
 	    </div>
         <div class="widget_shopping_cart_content">
             <?php
@@ -291,7 +297,16 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 								<?php endif; ?>
 								<div class="cart-product-meta">
 									<h3><a href="<?php echo esc_url( $_product->get_permalink( $cart_item ) ); ?>"><?php echo esc_html($product_name); ?></a></h3>
-									<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+									<p class="mb-0">
+										<span>Size :</span>
+										<span>M</span>
+									</p>
+									<p class="mb-0">
+										<span>Color :</span>
+										<span>Red</span>
+									</p>
+									
+								 	<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity d-flex justify-content-between">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?> 
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 											'<a href="%s" class="remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="caseicon-close"></i></a>',
@@ -302,8 +317,10 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 											esc_attr( $_product->get_sku() )
 										), $cart_item_key );
 									?>
-								</div>	
+								</di
+								v>	
 							</li>
+							
 							<?php
 						}
 					}
@@ -323,12 +340,15 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
         </div>
         <?php if ( ! WC()->cart->is_empty() ) : ?>
 			<div class="widget_shopping_cart_footer">
-				<p class="total"><strong><?php esc_html_e( 'Subtotal', 'evolt' ); ?>:</strong> <?php echo WC()->cart->get_cart_subtotal(); ?></p>
+				<p class="total d-flex justify-content-between">
+					<strong><?php esc_html_e( 'Subtotal', 'evolt' ); ?>:</strong>
+					 <?php echo WC()->cart->get_cart_subtotal(); ?>
+				</p>
 
 				<?php do_action( 'woocommerce_widget_shopping_cart_before_buttons' ); ?>
 
-				<p class="buttons">
-					<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="btn btn-outline btn-animate wc-forward"><?php esc_html_e( 'View Cart', 'evolt' ); ?></a>
+				<p class="buttons d-flex justify-content-between">
+					<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="btn  view-cart btn-animate wc-forward"><?php esc_html_e( 'View Cart', 'evolt' ); ?></a>
 					<a href="<?php echo esc_url( wc_get_checkout_url() ); ?>" class="btn btn-animate checkout wc-forward"><?php esc_html_e( 'Checkout', 'evolt' ); ?></a>
 				</p>
 			</div>
