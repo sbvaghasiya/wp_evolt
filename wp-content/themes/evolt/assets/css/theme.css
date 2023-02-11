@@ -25459,3 +25459,75 @@ body.rtl .scroll-top {
   /* End Footer */
 }
 
+@media screen and (min-width:1250px){
+  #sb_instagram #sbi_images{
+    display: grid;
+    width: 100%;
+    grid-auto-rows: 60px;
+    grid-auto-columns: 60px;
+  }
+  #sb_instagram.sbi_col_3 #sbi_images .sbi_item{
+    width:100%;
+  }
+  #sb_instagram.sbi_col_3 #sbi_images .sbi_item a.sbi_photo{
+    height: 173px !important;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(1) a.sbi_photo{
+    height: 235px !important;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(2) a.sbi_photo{
+    height: 292px !important;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(5) a.sbi_photo{
+    height: 235px !important;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(1){
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 4;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(2) {
+    grid-column: 4 / span 4;
+    grid-row: 1 / span 5;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(3){
+    grid-column: 8 / span 3;
+    grid-row: 2 / span 3;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(4){
+    grid-column: 1 / span 4;
+      grid-row: 6 / span 3;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(5){
+    grid-column: 5 / span 3;
+    grid-row: 6 / span 4;
+  }
+  #sb_instagram #sbi_images .sbi_item:nth-child(6) {
+    grid-column: 8 / span 3;
+    grid-row: 5 /span 3;
+  }
+}
+
+
+/* tearms & condiation page css start */
+
+.elementor-tabs-wrapper{
+  background: rgb(158 111 111 / 15%);
+}
+.elementor-2508 .elementor-element.elementor-element-8147f2c .elementor-tab-title.elementor-active{
+  color: #9E6F6F;
+  border-right: 3px solid #9E6F6F !important;
+  border: none;
+}
+.elementor-widget-tabs .elementor-tabs-content-wrapper {
+  border: 0px #ffffff00 !important;
+}
+.elementor-widget-tabs .elementor-tab-content{
+  padding-left: 40px !important;
+  border: none !important;
+  border: 1px #f1eaea !important;
+}
+.elementor-widget-tabs .elementor-tab-content, .elementor-widget-tabs .elementor-tab-title, .elementor-widget-tabs .elementor-tab-title:after, .elementor-widget-tabs .elementor-tab-title:before, .elementor-widget-tabs .elementor-tabs-content-wrapper {
+  border: 1px #f1eaea !important;
+}
+
+/* tearms & condiation page css end */
