@@ -1099,7 +1099,7 @@
 			right: 16px;
 			bottom: 16px;
 			left: 16px;
-			border-color: inherit;
+			border-color: transparent;
 			z-index: 1;
 			border-width: 2px;
 			border-style: solid;
@@ -1234,9 +1234,10 @@
 				visibility: hidden;
 				a {
 					margin: 0;
-					line-height: 44px;
-					height: 44px;
-					padding: 0 28px;
+					font-size: 15px;
+					line-height: 35px;
+					height: 35px;
+					padding: 0 15px;
 					@include border-radius(2px);
 					display: inline-flex;
 					overflow: hidden;
@@ -3297,5 +3298,20 @@ body {
 .relative_post_title{
 	font-size: 36px;
     line-height: 52px;
+	margin-bottom: 40px;
     text-align: center;
+}
+.cart_related_post{
+	width: 100%;
+    border-top: 1px solid lightgray;
+    padding-top: 80px;
+    margin-top: 80px;
+}
+.woocommerce-page{
+	ul.products.columns-2{
+		 li.product {
+			width: 25%;
+			max-width: 300px;
+		}
+	}
 }

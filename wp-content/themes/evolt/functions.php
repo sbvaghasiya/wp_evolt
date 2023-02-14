@@ -333,4 +333,4 @@ remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' 
 // ---------------------------------------------
 // Add them back UNDER the Cart Table
  
-add_action( 'woocommerce_after_cart_table', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
