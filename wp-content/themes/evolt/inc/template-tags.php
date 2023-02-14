@@ -1769,7 +1769,7 @@ if(!function_exists('evolt_get_product_grid_layout5')){
                                                 </div>
                                             <?php } ?>
                                         <?php if (class_exists('WPCleverWoosw')) { ?>
-                                            <div class="woocommerce-wishlist">
+                                            <div class="">
                                                 <?php echo do_shortcode('[woosw id="'.esc_attr( $product->get_id() ).'"]'); ?>
                                             </div>
                                         <?php } ?>
