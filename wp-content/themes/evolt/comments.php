@@ -65,7 +65,8 @@ $args = array(
         'fields' => apply_filters( 'comment_form_default_fields', array(
 
                 'author' =>
-                '<div class="row"><div class="comment-form-author col-lg-4 col-md-4 col-sm-12">'.
+                '<div class="row">
+                <div class="comment-form-author col-lg-4 col-md-4 col-sm-12">'.
                 '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
                 '" size="30" placeholder="'.esc_attr__('Name*', 'evolt').'"/></div>',
 

@@ -2361,8 +2361,10 @@ function comment_form( $args = array(), $post = null ) {
 	$required_text      = ' ' . wp_required_field_message();
 
 	$fields = array(
+		
+		
 		'author' => sprintf(
-			'<p class="comment-form-author">%s %s</p>',
+			'<p class="comment-form-author w-50">%s %s</p>',
 			sprintf(
 				'<label for="author">%s%s</label>',
 				__( 'Name' ),
@@ -2375,7 +2377,7 @@ function comment_form( $args = array(), $post = null ) {
 			)
 		),
 		'email'  => sprintf(
-			'<p class="comment-form-email">%s %s</p>',
+			'<p class="comment-form-email w-50">%s %s</p>',
 			sprintf(
 				'<label for="email">%s%s</label>',
 				__( 'Email' ),
