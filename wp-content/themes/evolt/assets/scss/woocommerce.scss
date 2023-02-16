@@ -1066,8 +1066,8 @@
 		position: relative;
 		z-index: 101;
 		div.woocommerce-result-count {
-			margin: 0 30px 20px 0px;
-			flex-grow: 1;
+			// margin: 0 30px 20px 0px;
+			// flex-grow: 1;
 		}
 		.woocommerce-topbar-ordering {
 			margin-bottom: 20px;
@@ -3212,6 +3212,7 @@ body {
 	display: flex;
 	margin-bottom: 20px;
 	margin-right: 50px;
+	flex-grow: 1;
 	.archive-layout {
 		width: 22px;
 		height: 19px;
@@ -3506,6 +3507,20 @@ body.woocommerce-cart {
 	}
 }
 
+.woocommerce {
+	form {
+		.form-row {
+			.input-checkbox{
+				margin: -2px 2px 0 0;
+				text-align: center;
+				width: 20px;
+				vertical-align: middle;
+				accent-color: black;
+			}
+		}
+	}
+}
+
 .woocommerce{
 	.shipping-details{
 		td{
@@ -3524,3 +3539,225 @@ body.woocommerce-cart {
 		}
 	}
 }
+
+// thank you checkout page css
+.woocommerce,.woocommerce-page {
+	img.success_img {
+		width: 100%;
+		max-width: 140px;
+		height: 100%;
+		max-height: 140px;
+		margin: 0 auto;
+		display: flex;
+	}
+}
+.woocommerce-notice--success{
+	text-align: center;
+	padding: 35px 0 40px;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 26px;
+	color: #555555;
+}
+.woocommerce {
+	ul.order_details {
+		display: flex;
+		list-style: none;
+		align-items: center;
+		border-bottom: 1px solid rgba(176,176,176,0.4);
+    	padding-bottom: 25px;
+		li {
+			width: 100%;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 26px;
+			text-transform: capitalize;
+			padding-right: 10px;
+			color: #333333;
+			strong {
+				display: block;
+				text-transform: none;
+				font-weight: 500;
+				font-size: 22px;
+				line-height: 30px;
+				color: #333333;
+			}
+		}
+	}
+}
+.woocommerce {
+	.wc-bacs-bank-details-account-name {
+		font-weight: 400;
+		font-size: 22px;
+		color: #555555;
+	}
+	.wc-bacs-bank-details-heading{
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 30px;
+		color: #333333;
+	}
+}
+.woocommerce-order-details {
+	.order_detail_box {
+		.order_details{
+			width: 100%;
+			max-width: 750px;
+			border: none;
+		}
+	}
+}
+.woocommerce-order-details {
+	.order_detail_box {
+		.order_total{
+			width: 100%;
+			max-width: 420px;
+			height: 100%;
+			padding: 30px 25px 20px;
+			background: rgba(158,111,111,0.06);
+			margin-left: auto;
+			border: none;
+		}
+	}
+}
+.woocommerce-order-details {
+	.order_detail_box {
+		table.shop_table {
+			tbody{
+				&:first-child {
+					tr{
+						&:first-child {
+							td,th{
+								padding-top: 0px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.order_detail_box {
+	.product-total{
+		text-align: end;
+	}
+}
+.order_detail_box {
+	table.shop_table {
+		th,td{
+			border: none !important;
+		}
+	}
+}
+.order_detail_box {
+	.order_total {
+		tr{
+			td{
+				padding: 20px 12px 9px;
+				text-align: end;
+			}
+		}
+	}
+}
+.order_detail_box {
+	.order_total {
+		tr {
+			td,th{
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 26px;
+				color: #333333;
+			}
+		}
+	}
+}
+.order_detail_box {
+	.order_total {
+		tr{
+			&:last-child {
+				th, td{
+					border-top: 1px dashed rgba(176,176,176,0.4) !important;
+				}
+			}
+		}
+	}
+}
+.woocommerce-order-details__title{
+	font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: #333333;
+}
+.order_detail_box {
+	.order_details {
+		tr{
+			&:not(:last-child) {
+				td{
+					border-bottom: 1px solid rgba(176,176,176,0.4) !important;
+				}
+			}
+		}
+	}
+}
+.order_details {
+	.order_item td img {
+		width: 100%;
+		max-width: 130px;
+		height: 100%;
+		max-height: 160px;
+		min-height: 160px;
+		object-fit: cover;
+		display: inline-block;
+		margin-right: 10px;
+	}
+}
+.order_detail_box {
+	.order_details {
+		tr {
+			td {
+				a.p_title, .product-total{
+					font-weight: 500;
+					font-size: 18px;
+					line-height: 26px;
+					color: #333333;
+				}
+			}
+		}
+	}
+}
+.order_detail_box {
+	.order_details {
+		tr {
+			.product-name{
+				padding-left: 0;
+			}
+		}
+	}
+}
+.addresses {
+	border-top: 1px solid rgba(176,176,176,0.4);
+    padding-top: 70px;
+	.billing_box,.shipping_box{
+		width: 100%;
+		max-width: 600px;
+		padding-left: 0;
+		.billing_add,.shipiing_add{
+			font-weight: 500;
+			font-size: 22px;
+			line-height: 32px;
+			color: #333333;
+		}
+		address{
+			border: 1px solid transparent !important;
+			border-radius: 0;
+			background: rgba(158,111,111,0.06);
+			padding: 20px;
+			color: #9E6F6F;
+			font-weight: 400;
+			font-size: 17px;
+			line-height: 25px;
+			text-transform: capitalize;
+		}
+	}
+}
+

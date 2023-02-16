@@ -17,10 +17,10 @@ get_header(); ?>
                             <div class="error-404-content">
                                 <div class="error-404-image"><img src="<?php echo esc_url(get_template_directory_uri().'/assets/images/image-404.png'); ?>" alt="<?php echo esc_attr__('404 Error', 'evolt'); ?>" /></div>
                                 <h3 class="error-404-title">
-                                    <?php echo esc_html__('Page Not Found', 'evolt'); ?>
+                                    <?php echo esc_html__('We can’t find the page that you’re looking for', 'evolt'); ?>
                                 </h3>
                                 <div class="error-404-desc">
-                                    <?php echo esc_html__("Something went wrong, looks like this page doesn't exist anymore.", "evolt"); ?>
+                                    <?php echo esc_html__("We’re sorry — something has gone wrong on our end.", "evolt"); ?>
                                 </div>
                                 <a class="btn btn-animate" href="<?php echo esc_url(home_url('/')); ?>">
                                     <?php echo esc_html__('back to home', 'evolt'); ?>

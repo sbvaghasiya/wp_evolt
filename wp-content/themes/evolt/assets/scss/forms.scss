@@ -308,6 +308,7 @@ form .select2-container--default {
             @include border-radius(4px);
             &.selected {
                 font-weight: 700;
+                color: #9E6F6F;
             }
             &.disabled {
                 background-color: transparent;
@@ -315,7 +316,8 @@ form .select2-container--default {
                 cursor: default;
             }
             &:hover, &:focus {
-                background-color: #f3f3f4;
+                background-color: rgba(158,111,111,0.2);
+                color: #9E6F6F;
             }
         }
         &:hover .option:not(:hover) {
