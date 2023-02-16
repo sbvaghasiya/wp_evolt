@@ -555,5 +555,7 @@
     $( document ).ajaxComplete(function() {
        evolt_quantity_icon();
     });
-
+   
+    
 })(jQuery);
+ 
