@@ -324,6 +324,8 @@ if ( ! function_exists( 'evolt_fonts_url' ) ) :
 	}
 endif;
 
+//Custom
+
 // ---------------------------------------------
 // Remove Cross Sells From Default Position 
  
@@ -334,3 +336,33 @@ remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' 
 // Add them back UNDER the Cart Table
  
 add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
+
+//-----------------------------------------Add Confirm Password Field-----------------------------------------------
+
+// Add a second password field to the checkout page in WC 3.x.
+add_filter( 'woocommerce_checkout_fields', 'wc_add_confirm_password_checkout', 10, 1 );
+function wc_add_confirm_password_checkout( $checkout_fields ) {
+    if ( get_option( 'woocommerce_registration_generate_password' ) == 'no' ) {
+        $checkout_fields['account']['account_password2'] = array(
+                'type'              => 'password',
+                'label'             => __( 'Confirm password', 'woocommerce' ),
+                'required'          => true,
+                'placeholder'       => _x( 'Confirm Password', 'placeholder', 'woocommerce' )
+        );
+    }
+
+    return $checkout_fields;
+}
+
+// Check the password and confirm password fields match before allow checkout to proceed.
+add_action( 'woocommerce_after_checkout_validation', 'wc_check_confirm_password_matches_checkout', 10, 2 );
+function wc_check_confirm_password_matches_checkout( $posted ) {
+    $checkout = WC()->checkout;
+    if ( ! is_user_logged_in() && ( $checkout->must_create_account || ! empty( $posted['createaccount'] ) ) ) {
+        if ( strcmp( $posted['account_password'], $posted['account_password2'] ) !== 0 ) {
+            wc_add_notice( __( 'Passwords do not match.', 'woocommerce' ), 'error' );
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
