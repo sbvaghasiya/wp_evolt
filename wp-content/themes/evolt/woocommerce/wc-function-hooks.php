@@ -305,11 +305,20 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 										<span>Color :</span>
 										<span>Red</span>
 									</p>
-									<div class="product-quantity">
-										<div class="quantity buttons_added">
-											<input type="button" value="-" class="minus">
-											<input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-											<input type="button" value="+" class="plus">
+									<div class="product-quantitys">
+										<div class="quantity">
+											<input type="number" id="quantity_63eecea2504cf" class="input-text qty text" name="quantity" value="1" title="Qty" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
+											<span class="quantity-icon">
+												<i class="quantity-down">-</i><i class="quantity-up">+</i>
+											</span>
+											<span class="quantity-icon">
+												<i class="quantity-down">-</i>
+												<i class="quantity-up">+</i>
+											</span>
+											<span class="quantity-icon">
+												<i class="quantity-down">-</i>
+												<i class="quantity-up">+</i>
+											</span>
 										</div>
 										<p class="price">$15.00</p>
 									</div>

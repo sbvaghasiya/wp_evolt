@@ -252,64 +252,11 @@
 					.quantity {
 						font-size: 14px;
 					}
-					.product-quantity{
+					.product-quantitys{
 						display: flex;
 						justify-content: space-between;
 						align-items: center;
 						width: 100%;
-						.quantity {
-							.input-text.qty {
-								width: 100%;
-								max-width: 40px;
-								max-height: 35px;
-								min-height: 35px;
-								padding: 0px;
-								text-align: center;
-								background-color: $background-color_1;
-								border: 1px solid transparent;
-							}
-							input {
-								&::-webkit-outer-spin-button {
-									-webkit-appearance: none;
-									-moz-appearance: none;
-									margin: 0;
-								}
-								&::-webkit-inner-spin-button {
-									-webkit-appearance: none;
-									-moz-appearance: none;
-									margin: 0;
-								}
-							}
-						}
-						.quantity.buttons_added {
-							position: relative;
-							width: 100%;
-							max-width: 100px;
-							height: 100%;
-							max-height: 35px;
-							min-height: 35px;
-							border: 1px solid #B0B0B0;
-							input {
-								display: inline-block;
-								margin: 0;
-								vertical-align: top;
-								box-shadow: none;
-							}
-							.minus {
-								font-size: 19px;
-								max-width: 30px;
-								background-color: transparent;
-								border: 1px solid transparent;
-								cursor: pointer;
-							}
-							.plus {
-								font-size: 19px;
-								max-width: 30px;
-								background-color: transparent;
-								border: 1px solid transparent;
-								cursor: pointer;
-							}
-						}
 						.price{
 							font-family: 'Jost';
 							font-style: normal;
@@ -1692,6 +1639,9 @@
 			.woocommerce-grouped-product-list {
 				td {
 					vertical-align: middle;
+					&:first-child{
+						width: 150px;
+					}
 				}
 			}
 		}
@@ -1720,10 +1670,13 @@
 				margin-right: 15px;
 				position: absolute;
 				bottom: 30px;
+				display: flex;
+				overflow-x: scroll;
 				
 				li {
 					padding: 0 15px;
-					width: 25%;
+					width: 100%;
+					flex: 0 0 25%;
 					// margin-bottom: 30px;
 					
 					img{
@@ -3524,3 +3477,5 @@ body.woocommerce-cart {
 		}
 	}
 }
+
+// productslider css
