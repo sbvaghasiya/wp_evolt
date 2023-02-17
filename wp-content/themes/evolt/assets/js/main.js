@@ -555,7 +555,55 @@
     $( document ).ajaxComplete(function() {
        evolt_quantity_icon();
     });
-   
+
+    /* ====================
+     WooComerce Minicart Quantity Update
+     ====================== */  
+    
+    // ------------ Counter BEGIN ------------ 
+    $( document ).on("click",".counter__increment, .counter__decrement", function(e){
+        var $this = $(this);
+        var $counter__input = $(this).parent().find(".counter__input");
+        var $currentVal = parseInt($(this).parent().find(".counter__input").val());
+
+        //Increment
+        if ($currentVal != NaN && $this.hasClass('counter__increment'))
+        {
+            $counter__input.val($currentVal + 1);
+        }
+        //Decrement
+        else if ($currentVal != NaN && $this.hasClass('counter__decrement'))
+        {
+            if ($currentVal == 1) {
+                return;
+            }
+            if ($currentVal > 1) {
+                $counter__input.val($currentVal - 1);
+            }
+        }
+
+        var item_qty = $counter__input.val();
+        var cart_item_key = $counter__input.attr("cart_item_key").replace(/cart\[([\w]+)\]\[qty\]/g, "$1");
+        function qty_cart() {
+            $.ajax({
+                type: 'POST',
+                url: ajaxurl,
+                data: {
+                    action: 'qty_cart',
+                    cart_item_key: cart_item_key,
+                    quantity: item_qty
+                },
+                success: function(data) {
+                    if(data == "success"){
+                        $( document.body ).trigger( 'wc_fragment_refresh' );
+                    }
+                }
+            });  
+        }
+
+        qty_cart();
+    });
+   // ------------ Counter END ------------ 
     
 })(jQuery);
  

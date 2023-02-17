@@ -366,3 +366,69 @@ function wc_check_confirm_password_matches_checkout( $posted ) {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------Mini cart quantity update ajax------------------------------------------
+function ajax_qty_cart() {
+	$response = "";
+    // Set item key as the hash found in input.qty's name
+    $cart_item_key = $_POST['cart_item_key'];
+
+    // Get the array of values owned by the product we're updating
+    $threeball_product_values = WC()->cart->get_cart_item( $cart_item_key );
+
+    // Get the quantity of the item in the cart
+    $threeball_product_quantity = apply_filters( 'woocommerce_stock_amount_cart_item', apply_filters( 'woocommerce_stock_amount', preg_replace( "/[^0-9\.]/", '', filter_var($_POST['quantity'], FILTER_SANITIZE_NUMBER_INT)) ), $cart_item_key );
+
+    // Update cart validation
+    $passed_validation  = apply_filters( 'woocommerce_update_cart_validation', true, $cart_item_key, $threeball_product_values, $threeball_product_quantity );
+
+    // Update the quantity of the item in the cart
+    if ( $passed_validation ) {
+        WC()->cart->set_quantity( $cart_item_key, $threeball_product_quantity, true );
+		$response = "success";
+    }else{
+		$response = "failed";
+	}
+
+    // Refresh the page
+    echo $response;
+
+    die();
+
+}
+
+add_action('wp_ajax_qty_cart', 'ajax_qty_cart');
+add_action('wp_ajax_nopriv_qty_cart', 'ajax_qty_cart');
+
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------Admin ajax file url embed on front-end----------------------------------------
+
+add_action("wp_head","admin_ajax_url");
+
+function admin_ajax_url(){
+	?>
+	<script>
+		var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+	</script>
+	<?php
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+
+//-------------------------------------Reorder columns (My orders in my account)---------------------------------------
+function woodmart_custom_account_orders_columns() {
+	$columns = array(
+		'order-number'  => __( 'Id', 'woocommerce' ),
+		'order-total'   => __( 'Total price', 'woocommerce' ),
+		'order-status'  => __( 'Payment status', 'woocommerce' ),
+		'order-date'    => __( 'Date', 'woocommerce' ),
+		'order-actions' => __( 'Details', 'woocommerce' ),
+	);
+
+	return $columns;
+}
+
+add_filter( 'woocommerce_account_orders_columns', 'woodmart_custom_account_orders_columns' );
+
+//---------------------------------------------------------------------------------------------------------------------

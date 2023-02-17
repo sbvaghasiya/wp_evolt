@@ -297,30 +297,25 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 								<?php endif; ?>
 								<div class="cart-product-meta">
 									<h3><a href="<?php echo esc_url( $_product->get_permalink( $cart_item ) ); ?>"><?php echo esc_html($product_name); ?></a></h3>
-									<p class="mb-0">
-										<span>Size :</span>
-										<span>M</span>
-									</p>
-									<p class="mb-0">
-										<span>Color :</span>
-										<span>Red</span>
-									</p>
+									<?php if(!empty($_product->get_attribute( 'pa_size' ))){ ?>
+										<p class="mb-0">
+											<span>Size :</span>
+											<span><?php echo $_product->get_attribute( 'pa_size' );?></span>
+										</p>
+									<?php }
+									if(!empty($_product->get_attribute( 'pa_color' ))){ ?>
+										<p class="mb-0">
+											<span>Color :</span>
+											<span><?php echo $_product->get_attribute( 'pa_color' ); ?></span>
+										</p>
+									<?php } ?>
 									<div class="product-quantitys">
-										<div class="quantity">
-											<input type="number" id="quantity_63eecea2504cf" class="input-text qty text" name="quantity" value="1" title="Qty" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-											<span class="quantity-icon">
-												<i class="quantity-down">-</i><i class="quantity-up">+</i>
-											</span>
-											<span class="quantity-icon">
-												<i class="quantity-down">-</i>
-												<i class="quantity-up">+</i>
-											</span>
-											<span class="quantity-icon">
-												<i class="quantity-down">-</i>
-												<i class="quantity-up">+</i>
-											</span>
-										</div>
-										<p class="price">$15.00</p>
+									
+										<!-- <div class="counter">
+											<input class="counter__input" cart_item_key="<?php //echo $cart_item_key; ?>" type="text" value="<?php echo $cart_item['quantity']?>" name="counter" size="2" readonly="readonly"/><a class="counter__increment" href="#">+</a><a class="counter__decrement" href="#">&ndash;</a>
+										</div> -->
+
+										<p class="price"><?php echo wc_price( $_product->get_price() * $cart_item['quantity'] ) ?></p>
 									</div>
 									
 								 	<!-- <?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity d-flex justify-content-between">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>  -->
@@ -334,8 +329,7 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 											esc_attr( $_product->get_sku() )
 										), $cart_item_key );
 									?>
-								</di
-								v>	
+								</div>	
 							</li>
 							
 							<?php
