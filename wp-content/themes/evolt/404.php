@@ -23,7 +23,8 @@ get_header(); ?>
                                     <?php echo esc_html__("We’re sorry — something has gone wrong on our end.", "evolt"); ?>
                                 </div>
                                 <a class="btn btn-animate" href="<?php echo esc_url(home_url('/')); ?>">
-                                    <?php echo esc_html__('back to home', 'evolt'); ?>
+                                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                                        <?php echo esc_html__('back to home', 'evolt'); ?>
                                 </a>
                             </div>
                         </section>
