@@ -262,6 +262,7 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
     ob_start();
     ?>
     <div class="widget_shopping_cart">
+		<div class="loader"></div>
     	<div class="widget_shopping_head">
 	    	<div class="widget_shopping_title">
 	    		<?php echo esc_html__( 'your Cart', 'evolt' ); ?>
@@ -311,9 +312,9 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 									<?php } ?>
 									<div class="product-quantitys">
 									
-										<!-- <div class="counter">
-											<input class="counter__input" cart_item_key="<?php //echo $cart_item_key; ?>" type="text" value="<?php echo $cart_item['quantity']?>" name="counter" size="2" readonly="readonly"/><a class="counter__increment" href="#">+</a><a class="counter__decrement" href="#">&ndash;</a>
-										</div> -->
+										<div class="counter">
+											<input class="counter__input" cart_item_key="<?php echo $cart_item_key; ?>" type="text" value="<?php echo $cart_item['quantity']?>" name="counter" size="2" readonly="readonly"/><a class="counter__increment" href="#">+</a><a class="counter__decrement" href="#">&ndash;</a>
+										</div>
 
 										<p class="price"><?php echo wc_price( $_product->get_price() * $cart_item['quantity'] ) ?></p>
 									</div>
