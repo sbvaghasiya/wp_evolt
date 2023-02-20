@@ -262,12 +262,12 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
     ob_start();
     ?>
     <div class="widget_shopping_cart">
-		<div class="loader"></div>
+		<div class="loader" style="display: none;"></div>
     	<div class="widget_shopping_head">
 	    	<div class="widget_shopping_title">
 	    		<?php echo esc_html__( 'your Cart', 'evolt' ); ?>
 	    	</div>
-			<p class="widget_shopping_text mb-0">Congratulations! You have got <span>FREE Shipping</span> </p>
+			<!-- <p class="widget_shopping_text mb-0">Congratulations! You have got <span>FREE Shipping</span> </p> -->
 	    </div>
         <div class="widget_shopping_cart_content">
             <?php
@@ -319,7 +319,7 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 										<p class="price"><?php echo wc_price( $_product->get_price() * $cart_item['quantity'] ) ?></p>
 									</div>
 									
-								 	<!-- <?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity d-flex justify-content-between">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>  -->
+								 	<?php //echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity d-flex justify-content-between">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?> 
 									<?php
 										echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf(
 											'<a href="%s" class="remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s"><i class="caseicon-close"></i></a>',
@@ -354,30 +354,48 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 			<h1 class="widget_may_also_title">You may also like</h1>
 			<div class="widget_may_also_card">
 				<div class="row">
-					<div class="col-6">
-						<div class="card-image">
-							<img src="http://localhost/wp_evolt/wp-content/uploads/2023/02/Mask-group-24.png" alt="" class="img-fluid">
-						</div>
-						<div class="card-contact">
-							<p class="mb-0">Silk Flower design top</p>
-							<div class="d-flex card-contact-price">
-								<span>$20.00</span>
-								<span>$20.00</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-6">
-						<div class="card-image">
-							<img src="http://localhost/wp_evolt/wp-content/uploads/2023/02/Mask-group-23.png" alt="" class="img-fluid">
-						</div>
-						<div class="card-contact">
-							<p class="mb-0">Silk Flower design top</p>
-							<div class="d-flex card-contact-price">
-								<span>$20.00</span>
-								<span>$20.00</span>
-							</div>
-						</div>
-					</div>
+
+					<?php
+						$args = array(
+							'post_type' => 'product',
+							'posts_per_page' => 2,
+							// 'orderby' => 'date',
+							'no_found_rows' => true,
+						);
+						$counter = 1;
+						$max = 2;
+						$loop = new WP_Query( $args );
+						shuffle($loop->posts);
+						if ( $loop->have_posts() ) {
+							while ( ($loop->have_posts()) && ($counter <= $max) ) : $loop->the_post();
+								// wc_get_template_part( 'content', 'product' );
+								$random_product = wc_get_product( get_the_ID() );
+								$rand_pro_title = $random_product->get_title();
+								$rand_pro_regular_price = $random_product->get_regular_price();
+								$rand_pro_sale_price = $random_product->get_sale_price();
+								$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+								?>
+
+								<div class="col-6">
+									<div class="card-image">
+										<img src="<?php echo $image[0]; ?>" alt="" class="img-fluid">
+									</div>
+									<div class="card-contact">
+										<p class="mb-0"><?php echo $rand_pro_title; ?></p>
+										<div class="d-flex card-contact-price">
+											<span><?php echo wc_price($rand_pro_regular_price); ?></span>
+											<span><?php echo wc_price($rand_pro_sale_price); ?></span>
+										</div>
+									</div>
+								</div>
+
+								<?php
+								$counter++;
+							endwhile;
+						}
+						wp_reset_postdata(); 
+					?>
+
 				</div>
 
 			</div>

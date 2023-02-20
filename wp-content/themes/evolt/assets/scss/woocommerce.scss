@@ -3917,7 +3917,7 @@ body.woocommerce-cart {
 
 .minicart_loader::before {
     content: "";
-    background-color: #ffffff6b;
+    background-color: rgba(255,255,255,0.41);
     position: absolute;
     top: 0;
     right: 0;
