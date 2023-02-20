@@ -3970,3 +3970,74 @@ body.woocommerce-cart {
 		}
 	}
 }
+
+// ---------- empty cart css -------------
+
+.woocommerce {
+	.empty_cart_img{
+		display: flex;
+		margin: 0 auto;
+	}
+	p.cart-empty{
+		font-weight: 500;
+		font-size: 36px;
+		line-height: 52px;
+		color: #333333;
+		padding-top: 50px;
+		span{
+			color: #9E6F6F;
+		}
+	}
+	.return-to-shop{
+		a{
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 26px;
+			background-color: #fff !important;
+			color: #333333;
+			text-transform: initial;
+			span{
+				color: #9E6F6F;
+			}		
+			&:hover{
+				color: #333333;
+			}
+		}	
+	}
+}
+
+.woocommerce{
+	.Empty_download_box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		img.empty_download{
+			display: block;
+			width: 100%;
+		}
+		p{
+			font-weight: 500;
+			font-size: 32px;
+			line-height: 46px;
+			color: #333333;
+			padding-top: 40px;
+			span{
+				color: #9E6F6F;
+			}
+		}
+		a{
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 26px;
+			background-color: #fff !important;
+			color: #333333;
+			text-transform: initial;
+			span{
+				color: #9E6F6F;
+			}		
+			&:hover{
+				color: #333333;
+			}
+		}	
+	}	
+}
