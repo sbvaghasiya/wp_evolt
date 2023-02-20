@@ -39,14 +39,34 @@ if ( $show_downloads ) {
 	);
 }
 ?>
+<?php
+/**
+ * Action hook fired after the order details.
+ *
+ * @since 4.4.0
+ * @param WC_Order $order Order data.
+ */
+do_action( 'woocommerce_after_order_details', $order );
+
+if ( $show_customer_details ) {
+	wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) );
+} 
+?>
 <section class="woocommerce-order-details">
 	<?php do_action( 'woocommerce_order_details_before_order_table', $order ); ?>
 
 	<h2 class="woocommerce-order-details__title"><?php esc_html_e( 'Order details', 'woocommerce' ); ?></h2>
 
-	<div class="order_detail_box d-flex">
+	<div class="order_detail_box">
         <table class="woocommerce-table woocommerce-table--order-details shop_table order_details">
-            
+            <thead>
+                <tr>
+                    <th class="woocommerce-table__product-name product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
+                    <th class="woocommerce-table__product-table product-qty text-center"><?php esc_html_e( 'Qty', 'woocommerce' ); ?></th>
+                    <th class="woocommerce-table__product-table product-price text-center"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
+                    <th class="woocommerce-table__product-table product-total text-center"><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
+                </tr>
+            </thead>
             <tbody>
                 <?php
                 do_action( 'woocommerce_order_details_before_order_table_items', $order );
@@ -99,15 +119,4 @@ if ( $show_downloads ) {
 	<?php do_action( 'woocommerce_order_details_after_order_table', $order ); ?>
 </section>
 
-<?php
-/**
- * Action hook fired after the order details.
- *
- * @since 4.4.0
- * @param WC_Order $order Order data.
- */
-do_action( 'woocommerce_after_order_details', $order );
 
-if ( $show_customer_details ) {
-	wc_get_template( 'order/order-details-customer.php', array( 'order' => $order ) );
-}
