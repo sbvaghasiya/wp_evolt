@@ -562,10 +562,12 @@
     
     // ------------ Counter BEGIN ------------ 
     $( document ).on("click",".counter__increment, .counter__decrement", function(e){
+        e.preventDefault();
         var $this = $(this);
         var $counter__input = $(this).parent().find(".counter__input");
         var $currentVal = parseInt($(this).parent().find(".counter__input").val());
-
+        $this.parents(".evolt-widget-cart-sidebar").find(".loader").show();
+        $this.parents(".evolt-widget-cart-sidebar").addClass("minicart_loader");
         //Increment
         if ($currentVal != NaN && $this.hasClass('counter__increment'))
         {
@@ -605,5 +607,19 @@
     });
    // ------------ Counter END ------------ 
     
+    $(document.body).on("click",".remove_from_cart_button",function(){
+        var $this = $(this);
+        $this.parents(".evolt-widget-cart-sidebar").find(".loader").show();
+        $this.parents(".evolt-widget-cart-sidebar").addClass("minicart_loader");
+    });
+
+    $( document.body ).on( 'removed_from_cart', function(){
+        $(".evolt-widget-cart-sidebar").find(".loader").hide();
+        $(".evolt-widget-cart-sidebar").removeClass("minicart_loader");
+    });
+    $( document.body ).on( 'wc_fragments_refreshed', function(){
+        $(".evolt-widget-cart-sidebar").find(".loader").hide();
+        $(".evolt-widget-cart-sidebar").removeClass("minicart_loader");
+    });
 })(jQuery);
  
