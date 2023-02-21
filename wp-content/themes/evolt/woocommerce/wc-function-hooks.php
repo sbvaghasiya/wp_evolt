@@ -237,10 +237,11 @@ function evolt_woocommerce_sg_social_share() {
 	if($product_social_share) : ?>
 		<div class="woocommerce-social-share">
 			<label><?php echo esc_html__('Share:', 'evolt'); ?></label>
+			<a class="lin-social" title="<?php echo esc_attr__('LinkedIn', 'evolt'); ?>" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>%20"><i class="caseicon-linkedin"></i></a>
 			<a class="fb-social" title="<?php echo esc_attr__('Facebook', 'evolt'); ?>" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="caseicon-facebook"></i></a>
 	        <a class="tw-social" title="<?php echo esc_attr__('Twitter', 'evolt'); ?>" target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>%20"><i class="caseicon-twitter"></i></a>
 	        <a class="pin-social" title="<?php echo esc_attr__('Pinterest', 'evolt'); ?>" target="_blank" href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&description=<?php the_title(); ?>%20"><i class="caseicon-pinterest"></i></a>
-	        <a class="lin-social" title="<?php echo esc_attr__('LinkedIn', 'evolt'); ?>" target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>%20"><i class="caseicon-linkedin"></i></a>
+	       
     </div>
 <?php endif; }
 
@@ -383,8 +384,8 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 									<div class="card-contact">
 										<p class="mb-0"><?php echo $rand_pro_title; ?></p>
 										<div class="d-flex card-contact-price">
-											<span><?php echo wc_price($rand_pro_regular_price); ?></span>
-											<span><?php echo wc_price($rand_pro_sale_price); ?></span>
+											<span class="new_price"><?php echo wc_price($rand_pro_regular_price); ?></span>
+											<span class="old_price"><?php echo wc_price($rand_pro_sale_price); ?></span>
 										</div>
 									</div>
 								</div>

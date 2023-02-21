@@ -31,10 +31,19 @@ if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 		$is_visible        = $product && $product->is_visible();
 		$product_permalink = apply_filters( 'woocommerce_order_item_permalink', $is_visible ? $product->get_permalink( $item ) : '', $item, $order );
 
-		echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a class="p_title" href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) );
-
-		
 		?>
+		<div class="evolt_prod_meta">
+			<?php
+			echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $product_permalink ? sprintf( '<a class="p_title" href="%s">%s</a>', $product_permalink, $item->get_name() ) : $item->get_name(), $item, $is_visible ) );
+
+			do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
+		
+			wc_display_item_meta( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+
+			do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
+			
+			?>
+		</div>
 	</td>
 	<!-- product-quantity list -->
     <td class="text-center">
@@ -50,11 +59,7 @@ if ( ! apply_filters( 'woocommerce_order_item_visible', true, $item ) ) {
 	
 			echo apply_filters( 'woocommerce_order_item_quantity_html', ' <span class="product-quantity">' . sprintf( '&times;&nbsp;%s', $qty_display ) . '</span>', $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	
-			do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, false );
-	
-			wc_display_item_meta( $item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-	
-			do_action( 'woocommerce_order_item_meta_end', $item_id, $item, $order, false );
+
 		?>
 	</td>
 	<td class="woocommerce-table__product-total product-price text-center">
