@@ -31,15 +31,43 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 	<h2 class="woocommerce-column__title billing_add"><?php esc_html_e( 'Billing address', 'woocommerce' ); ?></h2>
 
 	<address>
-		<?php echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+		<?php //echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 
-		<?php if ( $order->get_billing_phone() ) : ?>
-			<p class="woocommerce-customer-details--phone"><?php echo esc_html( $order->get_billing_phone() ); ?></p>
+		<?php if ( $order->get_billing_first_name() || $order->get_billing_last_name() ) : ?>
+			<label>
+				Name 
+				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_first_name() ." ". $order->get_billing_last_name() ); ?></span>
+			</label>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_email() ) : ?>
-			<p class="woocommerce-customer-details--email"><?php echo esc_html( $order->get_billing_email() ); ?></p>
+			<label>
+				Email 
+				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_email() ); ?></span>
+			</label>
 		<?php endif; ?>
+
+		<?php if ( $order->get_billing_phone() ) : ?>
+			<label>
+				Phone Number
+				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_phone() ); ?></span>
+			</label>
+		<?php endif; ?>
+
+		<?php if ( $order->get_billing_address_1() || $order->get_billing_address_2() ) : ?>
+			<label>
+				Address 
+				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_address_1()." ".$order->get_billing_address_2() ); ?></span>
+			</label>
+		<?php endif; ?>
+
+		<?php if ( $order->get_billing_postcode() ) : ?>
+			<label>
+				Zip Code 
+				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_postcode() ); ?></span>
+			</label>
+		<?php endif; ?>
+
 	</address>
 
 	<?php if ( $show_shipping ) : ?>
@@ -49,10 +77,34 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 		<div class="woocommerce-column woocommerce-column--2 woocommerce-column--shipping-address col-2 shipping_box">
 			<h2 class="woocommerce-column__title shipiing_add"><?php esc_html_e( 'Shipping address', 'woocommerce' ); ?></h2>
 			<address>
-				<?php echo wp_kses_post( $order->get_formatted_shipping_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+				<?php //echo wp_kses_post( $order->get_formatted_shipping_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
+
+				<?php if ( $order->get_shipping_first_name() || $order->get_shipping_last_name() ) : ?>
+					<label>
+						Name 
+						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_first_name() ." ". $order->get_shipping_last_name() ); ?></span>
+					</label>
+				<?php endif; ?>
 
 				<?php if ( $order->get_shipping_phone() ) : ?>
-					<p class="woocommerce-customer-details--phone"><?php echo esc_html( $order->get_shipping_phone() ); ?></p>
+					<label>
+						Phone Number
+						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_phone() ); ?></span>
+					</label>
+				<?php endif; ?>
+
+				<?php if ( $order->get_shipping_address_1() || $order->get_shipping_address_2() ) : ?>
+					<label>
+						Address 
+						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_address_1()." ".$order->get_shipping_address_2() ); ?></span>
+					</label>
+				<?php endif; ?>
+
+				<?php if ( $order->get_shipping_postcode() ) : ?>
+					<label>
+						Zip Code 
+						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_postcode() ); ?></span>
+					</label>
 				<?php endif; ?>
 			</address>
 		</div><!-- /.col-2 -->
