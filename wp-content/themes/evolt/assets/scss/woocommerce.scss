@@ -25,7 +25,7 @@
 		animation: ctspin .6s infinite linear;
         -webkit-animation: ctspin .6s infinite linear;
         box-sizing: border-box;
-        z-index: 2;
+        z-index: 10;
 	}
 	&:after {
 		content: '';
@@ -36,7 +36,7 @@
 		width: 100%;
 		height: 100%;
 		@include border-radius(100%);
-		z-index: 1;
+		z-index: 10;
 	}
 }
 .blockUI.blockOverlay, .blockUI.blockMsg {
@@ -150,8 +150,8 @@
 		
 		.widget_shopping_cart_content {
 			height: 100%;
-			min-height: 410px;
-			max-height: 410px;
+			min-height: 440px;
+			max-height: 440px;
 			overflow-y: auto;
 			background-color: #f9f9f9;
 			&::-webkit-scrollbar {
@@ -754,10 +754,17 @@
 	table.shop_table {
 		@include border-radius(0px);
 		td {
-			padding: 15px 30px;
+			padding: 30px 0px;
 		}
 		th, tbody th, tfoot td, tfoot th {
 			font-weight: 500;
+		}
+	}
+}
+table.shop_table{
+	tr.order_item{
+		td{
+			padding: 15px 30px;
 		}
 	}
 }
@@ -1858,7 +1865,7 @@
 					margin-bottom: 20px;
 					font-size: 15px;
 					&:before {
-						margin-right: 10px;
+						// margin-right: 10px;
 						font-family: 'Caseicon';
 						font-weight: 400;
 						font-size: 18px;
@@ -1867,18 +1874,21 @@
 				.woosc-btn {
 					margin-right: 15px;
 					// background-color: $third_color;
-					background-color: #9E6F6F;
+					background-color: transparent;
+					border: 1px solid #555555;
+					color: #333333;
 					font-family: 'Jost';
 					font-style: normal;
 					font-weight: 500;
-					font-size: 17px;
-					line-height: 45px;
-					border-radius: 0px;
+					font-size: 0px;
+					line-height: 36px;
+					border-radius: 50px;
 					text-transform: uppercase;
-					border-radius: 0px;
-					border: 1px solid transparent ;
+					padding: 0 10px;
+					margin-bottom: 0;
 					&:before {
 						content: "\f12a";
+						margin: 0 !important;
 					}
 					&:hover {
 						background-color: transparent;
@@ -1888,22 +1898,25 @@
 				}
 				.woosw-btn {
 					background-color: transparent;
-					line-height: 45px;
-					border: 1px solid #9E6F6F;
+					line-height: 36px;
+					border: 1px solid #555555;
 					color: #333333;
-					border-radius: 0px !important;
+					border-radius: 50px !important;
 					font-family: 'Jost';
 					font-style: normal;
 					font-weight: 500;
-					font-size: 17px;
+					font-size: 0px;
 					text-transform: uppercase;
+					padding: 0 10px;
+					margin-bottom: 0;
 					&:before {
 						content: "\f11a";
+						margin: 0 !important;
 					}
 					&:hover {
-						background-color: #9E6F6F !important;
-						border: 1px solid transparent !important;
-						color: #fff !important;
+						background-color: transparent;
+						border: 1px solid #9E6F6F !important;
+						color: #9E6F6F !important;
 					}
 				}
 			}
@@ -1994,7 +2007,7 @@
 				font-style: normal;
 				font-weight: 500;
 				font-size: 17px;
-				line-height: 45px;
+				line-height: 36px;
 				border-radius: 0px;
 				text-transform: uppercase;
 				&:hover{
@@ -2218,7 +2231,7 @@
 						li.review {
 							position: relative;
 							margin-bottom: 0px;
-							padding: 30px 0;
+							padding: 40px 0;
 							border-bottom: 1px solid rgba(176,176,176,0.4);
 							@media #{$max-lg} {
 								padding: 20px 15px 20px 20px;
@@ -2353,6 +2366,27 @@
 	}
 }
 
+.woocommerce-wishlist{
+	.woosw-added{
+		color: #fff !important;
+		&::before{
+			color: #e10000 !important;
+			margin-right: 0;
+		}
+		&:hover {
+			background-color: #fff !important;
+			&:before {
+				color: #e10000;
+			}
+		}
+	}
+	.woosc-btn-added{
+		&:before{
+			margin-right: 0 !important;
+		}
+	}
+}
+
 // Cart Page
 //--------------------------------------------------
 body.woocommerce-cart {
@@ -2414,7 +2448,7 @@ body.woocommerce-cart {
 			padding: 0 22px !important;
 		}
 		table.cart td.actions .input-text {
-			width: 200px !important;
+			width: 230px !important;
 			height: 45px;
 			padding: 0 22px;
 			font-size: 15px;
@@ -3262,8 +3296,12 @@ body {
 // End Wishlist & Quickview
 //------
 
-#secondary .widget.woocommerce .widget-title {
-	font-size: 20px;
+#secondary {
+	.widget.woocommerce{
+		.widget-title {
+			font-size: 20px;
+		}
+	}
 }
 
 .woocommerce-lost-password {
@@ -3857,9 +3895,9 @@ body.woocommerce-cart {
 			font-family: 'Jost';
 		}
 		address{
-			border: 1px solid transparent !important;
-			border-radius: 0;
-			background: rgba(158,111,111,0.06);
+			border: 1px solid #E0E0E0;
+			border-radius: 3px;
+			background: transparent;
 			padding: 20px;
 			color: #9E6F6F;
 			font-weight: 400;
@@ -3867,6 +3905,68 @@ body.woocommerce-cart {
 			line-height: 25px;
 			text-transform: capitalize;
 			font-family: 'Jost';
+			div{
+				display: flex;
+				padding-bottom: 10px;
+				label{
+					font-weight: 400;
+					font-size: 17px;
+					line-height: 25px;
+					color: #9E6F6F;
+					width: 100%;
+					max-width: 130px;
+				}			
+				span{
+					color: #333333;
+					font-weight: 400;
+					font-size: 17px;
+					line-height: 25px;
+					padding-left: 10px;
+				}
+			}
+		}
+	}
+}
+
+.woocommerce-customer-details{
+	.billing_add,.shipiing_add{
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 32px;
+		color: #333333;
+		font-family: 'Jost';
+	}
+	address{
+		width: 100%;
+		max-width: 600px;
+		border: 1px solid #E0E0E0 !important;
+		border-radius: 3px;
+		background: transparent;
+		padding: 20px;
+		color: #9E6F6F;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 25px;
+		text-transform: capitalize;
+		font-family: 'Jost';
+		div{
+			display: flex;
+			padding-bottom: 10px;
+			label{
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 25px;
+				color: #9E6F6F;
+				width: 100%;
+				max-width: 130px;
+			}			
+			span{
+				color: #333333;
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 25px;
+				padding-left: 10px;
+			}
 		}
 	}
 }

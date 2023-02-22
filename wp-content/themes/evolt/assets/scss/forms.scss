@@ -168,8 +168,12 @@ textarea {
         }
     }
 }
-.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
-    border-color: #1f201c; 
+.wpcf7 {
+    form.invalid,form.unaccepted {
+        .wpcf7-response-output{
+            border-color: #1f201c; 
+        }
+    }
 }
 .select2 {
     .select2-selection--single {
@@ -309,6 +313,7 @@ form .select2-container--default {
             &.selected {
                 font-weight: 700;
                 color: #9E6F6F;
+                background-color: rgba(158,111,111,0.2);
             }
             &.disabled {
                 background-color: transparent;
@@ -325,7 +330,7 @@ form .select2-container--default {
         }
     }
     &.open .list {
-        padding: 5px;
+        // padding: 5px;
         min-width: 185px;
         overflow: auto;
         width: 100%;
@@ -371,11 +376,19 @@ form .select2-container--default {
         }
     }
 }
-.no-csspointerevents .nice-select .list {
-    display: none;
+.no-csspointerevents {
+    .nice-select {
+        .list {
+            display: none;
+        }
+    }
 }
-.no-csspointerevents .nice-select.open .list {
-    display: block;
+.no-csspointerevents {
+    .nice-select.open {
+        .list {
+            display: block;
+        }
+    }
 }
 
 #ui-datepicker-div {

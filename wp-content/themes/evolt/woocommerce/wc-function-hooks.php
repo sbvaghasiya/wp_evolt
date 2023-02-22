@@ -213,7 +213,7 @@ function evolt_woocommerce_sg_product_excerpt() { ?>
 	</div>
 <?php }
 
-add_action( 'woocommerce_single_product_summary', 'evolt_woocommerce_sg_product_button', 30 );
+add_action( 'woocommerce_after_add_to_cart_button', 'evolt_woocommerce_sg_product_button', 30 );
 function evolt_woocommerce_sg_product_button() { 
 	global $product;
 	?>

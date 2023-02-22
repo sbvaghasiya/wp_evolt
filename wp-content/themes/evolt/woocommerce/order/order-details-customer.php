@@ -34,38 +34,38 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 		<?php //echo wp_kses_post( $order->get_formatted_billing_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 
 		<?php if ( $order->get_billing_first_name() || $order->get_billing_last_name() ) : ?>
-			<label>
-				Name 
+			<div>
+				<label> Name </label>
 				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_first_name() ." ". $order->get_billing_last_name() ); ?></span>
-			</label>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_email() ) : ?>
-			<label>
-				Email 
+			<div>	
+				<label> Email </label>
 				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_email() ); ?></span>
-			</label>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_phone() ) : ?>
-			<label>
-				Phone Number
+			<div>	
+				<label> Phone Number </label>
 				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_phone() ); ?></span>
-			</label>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_address_1() || $order->get_billing_address_2() ) : ?>
-			<label>
-				Address 
+			<div>	
+				<label> Address </label>
 				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_address_1()." ".$order->get_billing_address_2() ); ?></span>
-			</label>
+			</div>
 		<?php endif; ?>
 
 		<?php if ( $order->get_billing_postcode() ) : ?>
-			<label>
-				Zip Code 
+			<div>	
+				<label> Zip Code </label>
 				<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_billing_postcode() ); ?></span>
-			</label>
+			</div>
 		<?php endif; ?>
 
 	</address>
@@ -80,31 +80,31 @@ $show_shipping = ! wc_ship_to_billing_address_only() && $order->needs_shipping_a
 				<?php //echo wp_kses_post( $order->get_formatted_shipping_address( esc_html__( 'N/A', 'woocommerce' ) ) ); ?>
 
 				<?php if ( $order->get_shipping_first_name() || $order->get_shipping_last_name() ) : ?>
-					<label>
-						Name 
+					<div>	
+						<label> Name </label>
 						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_first_name() ." ". $order->get_shipping_last_name() ); ?></span>
-					</label>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( $order->get_shipping_phone() ) : ?>
-					<label>
-						Phone Number
+					<div>	
+						<label> Phone Number </label>
 						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_phone() ); ?></span>
-					</label>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( $order->get_shipping_address_1() || $order->get_shipping_address_2() ) : ?>
-					<label>
-						Address 
+					<div>	
+						<label> Address </label>
 						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_address_1()." ".$order->get_shipping_address_2() ); ?></span>
-					</label>
+					</div>
 				<?php endif; ?>
 
 				<?php if ( $order->get_shipping_postcode() ) : ?>
-					<label>
-						Zip Code 
+					<div>	
+						<label> Zip Code </label>
 						<span class="woocommerce-customer-details"><?php echo esc_html( $order->get_shipping_postcode() ); ?></span>
-					</label>
+					</div>
 				<?php endif; ?>
 			</address>
 		</div><!-- /.col-2 -->
