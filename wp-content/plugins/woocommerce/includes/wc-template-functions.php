@@ -3354,8 +3354,8 @@ if ( ! function_exists( 'wc_display_item_meta' ) ) {
 		$args    = wp_parse_args(
 			$args,
 			array(
-				'before'       => '<ul class="wc-item-meta"><li>',
-				'after'        => '</li></ul>',
+				'before'       => '<ul class="wc-item-meta"><li>(',
+				'after'        => ')</li></ul>',
 				'separator'    => '</li><li>',
 				'echo'         => true,
 				'autop'        => false,

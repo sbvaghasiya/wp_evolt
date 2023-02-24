@@ -53,20 +53,27 @@ function evolt_woocommerce_product() {
 			<a class="woocommerce-product-details" href="<?php the_permalink(); ?>">
 				<?php woocommerce_template_loop_product_thumbnail(); ?>
 			</a>
-			<div class="woocommerce-product-meta">
-				<?php if (class_exists('WPCleverWoosc')) { ?>
+			<?php if (class_exists('WPCleverWoosc')) { ?>
 					<div class="woocommerce-compare">
 				    	<?php echo do_shortcode('[woosc id="'.esc_attr( $product->get_id() ).'"]'); ?>
 					</div>
 				<?php } ?>
+			<div class="woocommerce-product-meta">
+				
 				<?php if (class_exists('WPCleverWoosw')) { ?>
-					<div class="woocommerce-wishlist">
+					<div class="woocommerce-wishlist tool_tip" data-tooltip="Add to Wishlist">
 				    	<?php echo do_shortcode('[woosw id="'.esc_attr( $product->get_id() ).'"]'); ?>
 					</div>
 				<?php } ?>
 				<?php if (class_exists('WPCleverWoosq')) { ?>
 					<div class="woocommerce-quick-view">
 						<?php echo do_shortcode('[woosq id="'.esc_attr( $product->get_id() ).'"]'); ?>
+					</div>
+				<?php } ?>
+				<?php if ( ! $product->managing_stock() && ! $product->is_in_stock() ) { ?>
+				<?php } else { ?>
+					<div class="woocommerce-add-to-cart tool_tip" data-tooltip="Add to Cart">
+						<?php woocommerce_template_loop_add_to_cart(); ?>
 					</div>
 				<?php } ?>
 			</div>
@@ -82,12 +89,12 @@ function evolt_woocommerce_product() {
 			<div class="woocommerce-product--excerpt" style="display: none;">
 				<?php woocommerce_template_single_excerpt(); ?>
 			</div>
-			<?php if ( ! $product->managing_stock() && ! $product->is_in_stock() ) { ?>
+			<?php /* if ( ! $product->managing_stock() && ! $product->is_in_stock() ) { ?>
 			<?php } else { ?>
 				<div class="woocommerce-add-to-cart">
 			    	<?php woocommerce_template_loop_add_to_cart(); ?>
 				</div>
-			<?php } ?>
+			<?php } */ ?>
 			<?php 
 				if ( $quantity_products && ! $product->is_sold_individually() && 'variable' != $product->get_type() && $product->is_purchasable() ) {
 					woocommerce_quantity_input( array( 'min_value' => 1, 'max_value' => $product->backorders_allowed() ? '' : $product->get_stock_quantity() ) );

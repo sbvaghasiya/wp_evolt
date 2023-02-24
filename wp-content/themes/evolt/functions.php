@@ -452,13 +452,16 @@ function custom_empty_cart_message() {
 
 
 function function_woosw_wishlist_items_before(  $key, $products  ) {
-    echo  '<thead>
-				<th>
-					<td>Product</td>
-					<td>Product Detail</td>
-					<td></td>
-	 			</th>
-			</thead>';
+	if($_POST['action'] != "wishlist_add" && $_POST['action'] != "wishlist_load"){
+		echo  '<thead>
+					<th>
+						<td>Product</td>
+						<td>Product Detail</td>
+						<td></td>
+					</th>
+				</thead>';
+	}
+	return;
 }
 add_action( 'woosw_wishlist_items_before', 'function_woosw_wishlist_items_before', 13, 2 );
 
