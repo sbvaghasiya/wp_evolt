@@ -27,7 +27,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<tr>
 				<th class="product-remove"><?php esc_html_e( 'Your Cart', 'woocommerce' ); ?></th>
 				
-				<th class="product-subtotal"><?php esc_html_e( '1 item', 'woocommerce' ); ?></th>
+				<th class="product-subtotal"><?php esc_html_e( count( WC()->cart->get_cart() ).' item', 'woocommerce' ); ?></th>
 			</tr>
 		</thead>
 		<tbody>

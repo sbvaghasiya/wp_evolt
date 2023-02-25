@@ -32,7 +32,15 @@ defined( 'ABSPATH' ) || exit;
 					<td class="order_details_data" colspan="2">
 						<div class="main-details-box">
 							<div class="prodcut_img">
-								<img src="http://localhost/wp_evolt/wp-content/uploads/2023/02/beanie-2.jpg" alt="">
+								<?php
+                                    $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+                                    if ( ! $product_permalink ) {
+                                        echo $thumbnail; // PHPCS: XSS ok.
+                                    } else {
+                                        printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+                                    }
+                                ?>
 							</div>
 							<div class="product__detail">
 								<div class="product-name">
