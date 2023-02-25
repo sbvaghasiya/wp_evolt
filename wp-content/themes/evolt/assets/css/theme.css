@@ -17778,6 +17778,9 @@ table.shop_table tr.order_item td {
   font-family: Caseicon;
   margin-left: 6px;
 }
+.woocommerce .woocommerce-product-inner .woocommerce-product-content .woocommerce-wishlist, .woocommerce .woocommerce-product-inner .woocommerce-product-content .woocommerce-add-to-cart {
+  display: none !important;
+}
 .woocommerce .woocommerce-product-inner .woocommerce-product-title {
   padding: 0px !important;
 }
@@ -17893,6 +17896,9 @@ table.shop_table tr.order_item td {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
 }
 .woocommerce ul.products li.product .price .amount {
   color: #1f201c;
@@ -17900,6 +17906,7 @@ table.shop_table tr.order_item td {
 .woocommerce ul.products li.product .price del {
   color: #999;
   font-weight: 500;
+  padding-left: 8px;
   opacity: 1;
 }
 .woocommerce ul.products li.product .price del .amount {
@@ -18017,6 +18024,68 @@ table.shop_table tr.order_item td {
   font-size: 18px;
   line-height: 26px;
 }
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-wishlist {
+  display: block !important;
+  width: 100%;
+  max-width: 40px;
+  opacity: 0;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-wishlist button {
+  background: #fff;
+  color: #000 !important;
+  width: 100%;
+  max-width: 40px;
+  height: 100%;
+  max-height: 40px;
+  font-size: 0;
+  padding: 0px 10px;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-wishlist button::before {
+  content: "\f11a";
+  font-family: Caseicon;
+  font-size: 16px;
+  line-height: 0;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-wishlist:hover button {
+  background-color: #9e6f6f;
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-add-to-cart {
+  display: block !important;
+  position: relative;
+  bottom: 0;
+  margin: 0;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-add-to-cart a {
+  background: #fff !important;
+  color: #000 !important;
+  width: 100%;
+  max-width: 40px;
+  height: 100%;
+  max-height: 40px;
+  font-size: 0;
+  padding: 0px 10px;
+  margin-top: 0;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-add-to-cart a i::before {
+  content: "\f12f";
+  font-family: Caseicon;
+  font-size: 16px;
+  line-height: 0;
+  margin-right: 5px;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-content .woocommerce-add-to-cart:hover a {
+  background-color: #9e6f6f;
+  color: #fff;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .woocommerce ul.products.evolt-products-list .woocommerce-product--excerpt {
   display: block !important;
   margin-top: 8px;
@@ -18035,6 +18104,7 @@ table.shop_table tr.order_item td {
   flex-wrap: wrap;
 }
 .woocommerce ul.products.evolt-products-list .woocommerce-product-inner .woocommerce-product-meta {
+  display: none !important;
   position: absolute;
   top: 26px;
   right: auto;
@@ -18064,6 +18134,9 @@ table.shop_table tr.order_item td {
   border-radius: 50px;
   padding: 0;
   width: 40px;
+}
+.woocommerce ul.products.evolt-products-list .woocommerce-product-inner:hover .woocommerce-wishlist {
+  opacity: 1;
 }
 .woocommerce-product-inner .woocommerce-product-header .woocommerce-compare {
   position: absolute;
@@ -18643,10 +18716,14 @@ table.shop_table tr.order_item td {
   line-height: 38px;
   text-transform: capitalize;
   color: #333;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  align-items: center;
 }
 .single-product #primary div.product .entry-summary .price ins, .single-product > div.product .entry-summary .price ins {
   margin-right: 22px;
-  color: #1f201c;
+  color: #333829;
   font-family: 'Jost';
   font-weight: 500;
 }
@@ -20757,6 +20834,25 @@ tr.order_item td.product-name .evolt_prod_meta ul li {
     border-radius: 50px;
     background-color: transparent !important;
   }
+}
+.woosw-items .woosw-item .woosw-item--actions .woosw-item--add .added_to_cart {
+  font-size: 0;
+  line-height: 25px;
+  margin-left: 20px;
+  background-color: transparent !important;
+  color: #555;
+  padding: 5px 10px;
+  text-align: center;
+}
+.woosw-items .woosw-item .woosw-item--actions .woosw-item--add .added_to_cart::before {
+  content: "\f13a";
+  font-family: Caseicon;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s cubic-bezier(0.24, 0.74, 0.58, 1);
 }
 .tool_tip::before {
   content: attr(data-tooltip);

@@ -448,7 +448,7 @@ function custom_empty_cart_message() {
 
 //---------------------------------------------------------------------------------------------------------------------
 
-//----------------------------------------------my-account wishlist product-list--------------------------------------
+//----------------------------------------------My account wishlist table head--------------------------------------
 
 
 function function_woosw_wishlist_items_before(  $key, $products  ) {
@@ -472,3 +472,9 @@ add_action( 'woosw_wishlist_items_before', 'function_woosw_wishlist_items_before
 function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
     return '<ins>' . ( is_numeric( $sale_price ) ? wc_price( $sale_price ) : $sale_price ) . '</ins> <del>' . ( is_numeric( $regular_price ) ? wc_price( $regular_price ) : $regular_price ) . '</del>';
 }
+
+//----------------------------Adding varition details in product name on checkout page---------------------------------
+
+add_filter( 'woocommerce_product_variation_title_include_attributes', '__return_true' );
+
+//---------------------------------------------------------------------------------------------------------------------

@@ -89,6 +89,24 @@ function evolt_woocommerce_product() {
 			<div class="woocommerce-product--excerpt" style="display: none;">
 				<?php woocommerce_template_single_excerpt(); ?>
 			</div>
+			
+			<!-- For list view on shop page -->
+			<div class="d-flex">
+				<?php if (class_exists('WPCleverWoosw')) { ?>
+					<div class="woocommerce-wishlist">
+						<?php echo do_shortcode('[woosw id="'.esc_attr( $product->get_id() ).'"]'); ?>
+					</div>
+				<?php } ?>
+				<?php if ( ! $product->managing_stock() && ! $product->is_in_stock() ) { ?>
+				<?php } else { ?>
+					<div class="woocommerce-add-to-cart">
+						<?php woocommerce_template_loop_add_to_cart(); ?>
+					</div>
+				<?php } ?>
+			</div>
+
+			<!---------------------------------->
+
 			<?php /* if ( ! $product->managing_stock() && ! $product->is_in_stock() ) { ?>
 			<?php } else { ?>
 				<div class="woocommerce-add-to-cart">
