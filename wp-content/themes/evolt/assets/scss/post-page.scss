@@ -120,7 +120,10 @@
 }
 
 .single-hentry.archive {
-    margin-bottom: 35px;
+    width: 100%;
+    max-width: 999px;
+    margin: 0 auto;
+    margin-bottom: 35px !important;
     @include transition(.3s cubic-bezier(.24,.74,.58,1));
     // .entry-body {
     //     border: 1px solid #ececf0;
