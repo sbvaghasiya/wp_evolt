@@ -163,8 +163,10 @@ ul.menu {
                 padding: 0;
             }
             &.menu-item-has-children > a:after, &.page_item_has_children > a:after {
-                content: "+";
+                content: "\f078";
+                font-family: 'FontAwesome';
                 margin-left: 4px;
+                font-size: 13px;
                 display: inline-block;
                 vertical-align: top;
                 position: relative;

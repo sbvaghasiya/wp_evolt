@@ -132,11 +132,12 @@
 		}
 	}
 	.evolt-header-top3 {
-		background-color: #eff5ef;
+		background-color: #333333;
 		padding: 0;
-		color: #666666;
-		font-size: 14px;
+		color: #fff;
+		font-size: 15px;
 		line-height: 24px;
+		padding: 10px 0;
 		.evolt-topbar-wellcome {
 			flex-grow: 1;
 			@media #{$max-lg} {
@@ -211,12 +212,18 @@
 				}
 			}
 		}
+		.site-header-lang .wpml-ls-statics-shortcode_actions.wpml-ls-legacy-dropdown .wpml-ls-slot-shortcode_actions  a.wpml-ls-item-toggle{
+			color: #fff !important;
+		}
 		.site-header-lang .wpml-ls-statics-shortcode_actions.wpml-ls-legacy-dropdown .wpml-ls-slot-shortcode_actions a, 
 		.site-header-lang .wpml-ls-statics-shortcode_actions.wpml-ls-legacy-dropdown-click .wpml-ls-slot-shortcode_actions a {
 			font-size: 14px;
-			font-family: inherit;
-			color: #666;
-			font-weight: normal;
+			color: #555555;
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 15px;
+			line-height: 22px;
 		}
 		.wpml-ls-sub-menu {
 			padding-left: 15px !important; 
@@ -451,21 +458,25 @@
 		display: flex;
 		flex-wrap: wrap;
 		border: 2px solid #e7e7e7;
-		@include border-radius(0px);
+		@include border-radius(40px);
 	}
 	.product-search-category {
 		.nice-select {
 			border: none;
-			background-color: #f5f5f5;
-			@include border-radius(0px 0px 0px 0px);
-			color: #1a2428;
-			font-weight: 500;
-			font-family: 'Fira Sans', sans-serif;
+			background-color: #9E6F6F;
+			@include border-radius(40px);
 			min-width: 181px;
 			padding-left: 20px;
-			font-size: 12px;
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+			letter-spacing: 0.02em;
+			text-transform: capitalize;
+			color: #fff;
 			&:after {
-				color: #1a2428;
+				color: #fff;
 			}
 			span.current {
 				line-height: 39px;
@@ -477,12 +488,16 @@
 		flex-grow: 1;
 		input {
 			border: none;
-			font-size: 12px;
-			color: #e7e7e7;
-			font-weight: 500;
-			font-family: 'Fira Sans', sans-serif;
 			width: auto;
 			flex-grow: 1;
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+			letter-spacing: 0.02em;
+			text-transform: capitalize;
+			color: #555555;
 			&:hover, &:focus {
 				color: #888;
 			}
@@ -490,7 +505,7 @@
 		button {
 			font-size: 14px;
 			padding: 0 48px;
-			@include border-radius(0px 0px 0px 0px);
+			@include border-radius(40px);
 			&:before {
 				@include border-radius(inherit);
 			}
@@ -506,7 +521,7 @@
 	flex-wrap: wrap;
 	.product-searchform {
 		border: 1px solid #dde2dd;
-		border-radius: 0px;
+		border-radius: 22px;
 		background-color: #fff;
 		max-width: 550px;
 		width: 100%;
@@ -517,18 +532,24 @@
 		align-items: center;
 		input {
 			border: none;
-			height: 43px;
-			font-size: 15px;
-			color: #777777;
+			height: 41px;
 			background-color: transparent;
+			font-family: 'Jost';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+			letter-spacing: 0.02em;
+			text-transform: capitalize;
+			color: #555555;
 		}
 		.product-search-submit {
 			padding: 0;
 			min-width: 50px;
-			line-height: 43px;
+			line-height: 41px;
 			background-color: transparent;
 			color: #4c4c4c;
-			height: 43px;
+			height: 41px;
 			&:hover {
 				color: $primary_color;
 			}
@@ -539,17 +560,31 @@
 			color: #4c4c4c;
 			border-top: none;
 			border-bottom: none;
-			height: 43px;
+			height: 41px;
 			min-width: 150px;
+			border-color: rgba(176,176,176,0.5);
 			&:hover, &:focus {
 				border-color: #dde2dd;
 			}
 			.list .option {
 				padding: 10px 14px;
+				font-family: 'Jost';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 23px;	
+				letter-spacing: 0.02em;
+				text-transform: capitalize;
 			}
 			span.current {
-				text-transform: uppercase;
+				font-family: 'Jost';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 16px;
 				line-height: 31px;
+				letter-spacing: 0.02em;
+				text-transform: capitalize;
+				color: #555555;
 			}
 			&:after {
 				color: #4c4c4c;
@@ -775,18 +810,49 @@
 			.evolt-header-navigation, .evolt-main-navigation {
 				flex-grow: 1;
 			}
+			.evolt-header-top2 {
+				border-bottom: 1px solid #e7e7e7;
+				padding: 12px 0;
+				background: rgba(158,111,111,0.15);
+			}
+			.evolt-header-product-search {
+				.product-searchform{
+					flex-direction: row-reverse;					
+					.product-search-meta {
+						input{
+							border-radius: 40px;
+						}
+						button{
+							display: none;
+						}
+					}
+					.nice-select{
+						.list{
+							.option{
+								color: #000;
+							}
+						}
+					}
+				}				
+			}
 			#evolt-header {
-				background-color: $primary_color;
+				// background-color: $primary_color;
+				background-color: #333333;
 				.evolt-header-branding {
 					display: none;
-				}
+				}				
 				.evolt-main-menu {
 					> li {
 						margin: 0 19px;
 						> a {
-							line-height: 60px;
-							font-size: 15px;
 							color: #fff;
+							font-family: 'Jost';
+							font-style: normal;
+							font-weight: 500;
+							font-size: 18px;
+							line-height: 26px;
+							letter-spacing: 0.02em;
+							text-transform: capitalize;
 						}
 					}
 					&.evolt-menu-shop > li {
@@ -843,7 +909,7 @@
 				align-items: center;
 				padding: 0 15px;
 				svg {
-					height: 34px;
+					height: 40px;
 				}
 				label {
 					display: block;
@@ -859,7 +925,29 @@
 				.evolt-header-phone-icon {
 					margin-right: 18px;
 				}
+				.evolt-header-phone-meta{
+					label{
+						font-family: 'Jost';
+						font-style: normal;
+						font-weight: 500;
+						font-size: 14px;
+						line-height: 20px;
+						letter-spacing: 0.02em;
+						text-transform: uppercase;
+						color: #333333;
+					}
+					a{
+						color: #9E6F6F;
+						font-family: 'Jost';
+						font-style: normal;
+						font-weight: 500;
+						font-size: 20px;
+						line-height: 29px;
+						letter-spacing: 0.02em;
+					}
+				}
 			}
+
 		}
 		&.evolt-header-layout3 {
 			.evolt-header-navigation, .evolt-main-navigation {
@@ -874,6 +962,9 @@
 			}
 			.evolt-main-menu {
 				flex-grow: 1;
+				width: 100%;
+				margin: 0 auto;
+				max-width: fit-content;
 			}
 			.evolt-menu-secondary {
 				margin: 0;
@@ -925,30 +1016,38 @@
 					> li {
 						margin: 0 12px;
 						> a {
-							line-height: 48px;
-							&:before {
-								content: '';
-								height: 3px;
-								width: 0;
-								position: absolute;
-								bottom: 0;
-								left: 0;
-								right: 0;
-								margin: auto;
-								@include transition(.3s cubic-bezier(.24,.74,.58,1));
-								background-color: $primary_color;
-							}
+							font-family: 'Jost';
+							font-style: normal;
+							font-weight: 500;
+							font-size: 18px;
+							line-height: 26px;
+							letter-spacing: 0.02em;
+							text-transform: capitalize;
+							color: #333333;
+							padding: 15px 5px;
+							// &:before {
+							// 	content: '';
+							// 	height: 3px;
+							// 	width: 0;
+							// 	position: absolute;
+							// 	bottom: 0;
+							// 	left: 0;
+							// 	right: 0;
+							// 	margin: auto;
+							// 	@include transition(.3s cubic-bezier(.24,.74,.58,1));
+							// 	background-color: $primary_color;
+							// }
 						}
-						&:hover > a,
-		                &.current_page_item > a,
-		                &.current-menu-item > a,
-		                &.current_page_ancestor > a,
-		                &.current-menu-ancestor > a {
-		                	&:before {
-		                		width: 100%;
-		                		opacity: 1;
-		                	}
-		                }
+						// &:hover > a,
+		                // &.current_page_item > a,
+		                // &.current-menu-item > a,
+		                // &.current_page_ancestor > a,
+		                // &.current-menu-ancestor > a {
+		                // 	&:before {
+		                // 		width: 100%;
+		                // 		opacity: 1;
+		                // 	}
+		                // }
 					}
 					&.evolt-menu-shop {
 						min-width: 272px;
@@ -1036,6 +1135,7 @@
 						text-align: center;
 						position: relative;
 						cursor: pointer;
+						margin-right: 7px;
 						.woosc-btn, .evolt-woosw-btn {
 							font-size: 0px;
 							position: absolute;

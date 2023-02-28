@@ -1049,6 +1049,18 @@ table.shop_table{
 		}
 		.woocommerce-ordering {
 			min-width: 230px;
+			display: flex;
+    		align-items: center;
+			label{
+				width: 100%;
+				margin-right: 15px;
+				font-family: 'Jost';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 17px;
+				line-height: 25px;
+				color: #333333;
+			}
 			.nice-select {
 				background-color: #fff;
 			}
@@ -3652,22 +3664,24 @@ body {
 	margin-right: 50px;
 	flex-grow: 1;
 	.archive-layout {
-		width: 22px;
-		height: 19px;
-		opacity: 0.33;
+		width: 25px;
+		height: 25px;
 		margin-left: 10px;
 		@include transition(.3s cubic-bezier(.24,.74,.58,1));
 		background-position: center;
 		background-repeat: no-repeat;
 		cursor: pointer;
 		&.layout-grid {
-			background-image: url(../images/layout-grid.png);
+			background-image: url(../images/layout-grid-new.png);
+			&:hover, &.active {
+				background-image: url(../images/layout-grid-new-active.png);
+			}
 		}
 		&.layout-list {
-			background-image: url(../images/layout-list.png);
-		}
-		&:hover, &.active {
-			opacity: 1;
+			background-image: url(../images/layout-list-new.png);
+			&:hover, &.active {
+				background-image: url(../images/layout-list-new-active.png);
+			}
 		}
 	}
 }
@@ -4329,8 +4343,6 @@ body.woocommerce-cart {
 	}
 }
 
-
-
 // 
 /* ---------- COUNTER BEGIN ---------- */
 .counter__increment,
@@ -4647,8 +4659,6 @@ tr.order_item {
 		}
 	}	
 }
-
-
 
 // shop-list card icon tool-tip css--------------------
 

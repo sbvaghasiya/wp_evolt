@@ -99,36 +99,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                         </div>
                     </div>
                     <?php evolt_get_product_search_h3(); ?>
-                    <div class="evolt-header-right">
-                        <div class="evolt-header-user">
-                            <?php if(!is_user_logged_in()) : ?>
-                                <?php if(!empty($login_text)) { ?>
-                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
-                                <?php } else { ?>
-                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
-                                <?php } ?>
-
-                                <?php if(!empty($register_text)) { ?>
-                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
-                                <?php } else { ?>
-                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
-                                <?php } ?>
-                            <?php endif; ?>
-
-                            <?php if(is_user_logged_in()) : ?>
-                                <div class="h-btn-icon-user h-btn-user">
-                                    <i class="flaticon-user"></i>
-                                    <ul class="evolt-user-account">
-                                        <?php if(class_exists('WooCommerce') ) :
-                                            $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
-                                            ?>
-                                            <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
-                                        <?php endif; ?>
-                                        <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
-                                    </ul>
-                                </div>
-                            <?php endif; ?>
-                        </div>
+                    <div class="evolt-header-right">                       
                         <div class="evolt-header-shop-icons">
                             <?php if($wishlist_icon && class_exists('WPCleverWoosw')) : 
                                 $woosw_id = get_option( 'woosw_page_id' );
@@ -151,6 +122,35 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                 <div class="icon-item h-btn-cart">
                                     <i class="caseicon-shopping-cart-alt"></i>
                                     <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="evolt-header-user">
+                            <?php if(!is_user_logged_in()) : ?>
+                                <?php if(!empty($login_text)) { ?>
+                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
+                                <?php } else { ?>
+                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
+                                <?php } ?>
+
+                                <?php if(!empty($register_text)) { ?>
+                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
+                                <?php } else { ?>
+                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
+                                <?php } ?>
+                            <?php endif; ?>
+
+                            <?php if(is_user_logged_in()) : ?>
+                                <div class="h-btn-icon-user h-btn-user">
+                                <i class="fa fa-user-o" aria-hidden="true"></i>
+                                    <ul class="evolt-user-account">
+                                        <?php if(class_exists('WooCommerce') ) :
+                                            $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
+                                            ?>
+                                            <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
+                                        <?php endif; ?>
+                                        <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
+                                    </ul>
                                 </div>
                             <?php endif; ?>
                         </div>
