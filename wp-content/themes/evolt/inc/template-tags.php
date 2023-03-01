@@ -2060,7 +2060,7 @@ function evolt_get_product_search()
                     </select>
                 </div>
                 <div class="product-search-meta">
-                    <input type="text" name="s" value="" placeholder="<?php esc_html_e('Search Product', 'evolt'); ?>">
+                    <input type="text" name="s" value="" placeholder="<?php esc_html_e('Search Product...', 'evolt'); ?>">
                     <button type="submit" class="btn btn-animate"><?php esc_html_e('Search', 'evolt'); ?></button>
                     <input type="hidden" name="post_type" value="product"/>
                 </div>

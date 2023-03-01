@@ -40,7 +40,7 @@ if ( ! function_exists( 'evolt_setup' ) ) :
 			'menu-left' => esc_html__( 'Menu Left', 'evolt' ),
 			'menu-right' => esc_html__( 'Menu Right', 'evolt' ),
 			'menu-topbar' => esc_html__( 'Menu Topbar Header Layout 2', 'evolt' ),
-			'menu-topbar2' => esc_html__( 'Menu Topbar Header Layout 3', 'evolt' ),
+			// 'menu-topbar2' => esc_html__( 'Menu Topbar Header Layout 3', 'evolt' ),
 			'menu-shop' => esc_html__( 'Menu Shop', 'evolt' ),
 		) );
 

@@ -15,7 +15,12 @@ $h_custom_menu_left = evolt_get_page_option( 'h_custom_menu_left' );
 $h_custom_menu_right = evolt_get_page_option( 'h_custom_menu_right' );
 $h_topbar = evolt_get_option( 'h_topbar', 'show' );
 $wellcome = evolt_get_option( 'wellcome', '' );
+$h_phone = evolt_get_option( 'h_phone' );
+$h_phone_link = evolt_get_option( 'h_phone_link' );
+$h_address = evolt_get_option( 'h_address' );
+$h_address_link = evolt_get_option( 'h_address_link' );
 $icon_has_children = evolt_get_option('icon_has_children', 'arrow');
+$language_switch = evolt_get_option('language_switch', false);
 $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => get_template_directory_uri().'/assets/images/logo-dark.png', 'id' => '' ) );
 ?>
 <header id="evolt-masthead">
@@ -23,12 +28,24 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
         <?php if($h_topbar == 'show') : ?>
             <div id="evolt-header-top" class="evolt-header-top1">
                 <div class="container">
-                    <div class="row">
+                    <div class="row justify-content-between">
                         <?php if(!empty($wellcome)) : ?>
-                            <div class="evolt-topbar-wellcome">
-                                <?php echo wp_kses_post($wellcome); ?>
-                            </div>
-                        <?php endif; ?>
+                            <!-- <div class="evolt-topbar-wellcome">
+                                <?php /*  echo wp_kses_post($wellcome); */?>
+                            </div> -->
+                        <?php endif; ?>                        
+                        <div class="details_top_header">
+                            <?php if(!empty($h_phone)) : ?>
+                                <div class="evolt-topbar-item">
+                                    <a href="tel:<?php echo esc_attr($h_phone_link); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo wp_kses_post($h_phone); ?></a>
+                                </div>
+                            <?php endif; ?>
+                            <?php if(!empty($h_address)) : ?>
+                                <div class="evolt-topbar-item">
+                                    <a href="mailto:<?php echo esc_url($h_address_link); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i><?php echo wp_kses_post($h_address); ?></a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
                         <div class="evolt-topbar-cart">
                             <?php if(class_exists('Woocommerce') && $cart_icon) : ?>
                                 <div class="header-right-item h-btn-cart">
@@ -38,13 +55,56 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                 </div>
                             <?php endif; ?>
                         </div>
+
+                        <div class="evolt-topbar-right">
+                            <?php if ($language_switch) : ?>
+                                <?php if (class_exists('SitePress')) { ?>
+                                    <div class="site-header-lang">
+                                        <?php do_action('wpml_add_language_selector'); ?>
+                                    </div>
+                                <?php } else {
+                                    wp_enqueue_style('wpml-style', get_template_directory_uri() . '/assets/css/style-lang.css', array(), '1.0.0');
+                                ?>
+                                    <div class="site-header-lang custom">
+                                        <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown">
+                                            <ul>
+                                                <li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown">
+                                                    <a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle"><img class="wpml-ls-flag" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/flag/en.png'); ?>" alt="en" title="English"><span class="wpml-ls-native"><?php echo esc_html__('English', 'evolt'); ?></span></a>
+                                                    <ul class="wpml-ls-sub-menu">
+                                                        <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr">
+                                                            <a href="#" class="wpml-ls-link"><img class="wpml-ls-flag" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/flag/fr.png'); ?>" alt="fr" title="France"><span class="wpml-ls-native"><?php echo esc_html__('France', 'evolt'); ?></span></a>
+                                                        </li>
+                                                        <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-de wpml-ls-last-item">
+                                                            <a href="#" class="wpml-ls-link"><img class="wpml-ls-flag" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/flag/ru.png'); ?>" alt="ue" title="Russia"><span class="wpml-ls-native"><?php echo esc_html__('Russia', 'evolt'); ?></span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            <?php endif; ?>
+                            <?php if (has_nav_menu('menu-topbar')) {
+                                $attr_menu = array(
+                                    'theme_location' => 'menu-topbar',
+                                    'container'  => '',
+                                    'menu_id'    => 'evolt-menu-topbar',
+                                    'menu_class' => 'evolt-main-menu children-arrow evolt-menu-topbar clearfix',
+                                    'link_before'     => '</span><span>',
+                                    'link_after'      => '</span>',
+                                    'depth'       => '1',
+                                    'walker'         => class_exists('EFramework_Mega_Menu_Walker') ? new EFramework_Mega_Menu_Walker : '',
+                                );
+                                wp_nav_menu($attr_menu);
+                            } ?>
+                        </div>
                     </div>
                 </div>
             </div>
         <?php endif; ?>
         <div id="evolt-header" class="evolt-header-main">
             <div class="container">
-                <div class="row">
+                <div class="row d-flex justify-content-between align-items-center">
                     <?php if ( has_nav_menu( 'menu-left' ) ) { ?>
                         <div class="evolt-header-navigation evolt-header-navigation-left">
                             <nav class="evolt-main-navigation">
@@ -135,6 +195,9 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                             </nav>
                             <div class="evolt-header-right">
                                 <div class="evolt-header-icons">
+                                    <?php if($search_icon) : ?>
+                                        <div class="icon-item h-btn-search"><i class="flaticon-search"></i></div>
+                                    <?php endif; ?>
                                     <?php if($wishlist_icon && class_exists('WPCleverWoosw')) : 
                                         $woosw_id = get_option( 'woosw_page_id' );
                                         ?>
@@ -147,9 +210,41 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                             </a>
                                         </div>
                                     <?php endif; ?>
-                                    <?php if($search_icon) : ?>
-                                        <div class="icon-item h-btn-search"><i class="flaticon-search"></i></div>
-                                    <?php endif; ?>
+                                    <?php if(class_exists('Woocommerce') && $cart_icon) : ?>
+                                        <div class="icon-item h-btn-cart">
+                                            <i class="caseicon-shopping-cart-alt"></i>
+                                            <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
+                                        </div>
+                                    <?php endif; ?>   
+                                    <div class="evolt-header-user">
+                                        <?php if(!is_user_logged_in()) : ?>
+                                            <?php if(!empty($login_text)) { ?>
+                                                <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
+                                            <?php } else { ?>
+                                                <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
+                                            <?php } ?>
+
+                                            <?php if(!empty($register_text)) { ?>
+                                                / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
+                                            <?php } else { ?>
+                                                / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
+                                            <?php } ?>
+                                        <?php endif; ?>
+
+                                        <?php if(is_user_logged_in()) : ?>
+                                            <div class="h-btn-icon-user h-btn-user">
+                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                                <ul class="evolt-user-account">
+                                                    <?php if(class_exists('WooCommerce') ) :
+                                                        $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
+                                                        ?>
+                                                        <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
+                                                    <?php endif; ?>
+                                                    <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
+                                                </ul>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>                                
                                 </div>
                             </div>
                         </div>

@@ -42,23 +42,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                             </div>
                         <?php endif; ?>
                         <div class="evolt-topbar-right">
-                            <?php if ( has_nav_menu( 'menu-topbar2' ) ) {
-                                $attr_menu = array(
-                                    'theme_location' => 'menu-topbar2',
-                                    'container'  => '',
-                                    'menu_id'    => 'evolt-menu-topbar2',
-                                    'menu_class' => 'evolt-menu-topbar2 clearfix',
-                                    'link_before'     => '</span><span>',
-                                    'link_after'      => '</span>',
-                                    'depth'       => '1',
-                                    'walker'         => class_exists( 'EFramework_Mega_Menu_Walker' ) ? new EFramework_Mega_Menu_Walker : '',
-                                );
-                                wp_nav_menu( $attr_menu );
-                            } ?>
-                            <div class="evolt-topbar-social">
-                                <?php evolt_social_header(); ?>
-                            </div>
-                            <?php if($language_switch) : ?>
+                        <?php if($language_switch) : ?>
                                 <?php if(class_exists('SitePress')) { ?>
                                     <div class="site-header-lang">
                                         <?php do_action('wpml_add_language_selector'); ?>
@@ -70,13 +54,13 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                         <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown">
                                             <ul>
                                                 <li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown">
-                                                    <a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle"><span class="wpml-ls-native"><?php echo esc_html__('English', 'evolt'); ?></span></a>
+                                                    <a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle"><img class="wpml-ls-flag" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/flag/en.png'); ?>" alt="en" title="English"><span class="wpml-ls-native"><?php echo esc_html__('English', 'evolt'); ?></span></a>
                                                     <ul class="wpml-ls-sub-menu">
                                                         <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr">
-                                                            <a href="#" class="wpml-ls-link"><span class="wpml-ls-native"><?php echo esc_html__('France', 'evolt'); ?></span></a>
+                                                            <a href="#" class="wpml-ls-link"><img class="wpml-ls-flag" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/flag/fr.png'); ?>" alt="fr" title="France"><span class="wpml-ls-native"><?php echo esc_html__('France', 'evolt'); ?></span></a>
                                                         </li>
                                                         <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-de wpml-ls-last-item">
-                                                            <a href="#" class="wpml-ls-link"><span class="wpml-ls-native"><?php echo esc_html__('Russia', 'evolt'); ?></span></a>
+                                                            <a href="#" class="wpml-ls-link"><img class="wpml-ls-flag" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/flag/ru.png'); ?>" alt="ue" title="Russia"><span class="wpml-ls-native"><?php echo esc_html__('Russia', 'evolt'); ?></span></a>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -85,6 +69,22 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                     </div>
                                 <?php } ?>
                             <?php endif; ?>
+                            <?php if ( has_nav_menu( 'menu-topbar' ) ) {
+                                $attr_menu = array(
+                                    'theme_location' => 'menu-topbar',
+                                    'container'  => '',
+                                    'menu_id'    => 'evolt-menu-topbar',
+                                    'menu_class' => 'evolt-menu-topbar2 clearfix',
+                                    'link_before'     => '</span><span>',
+                                    'link_after'      => '</span>',
+                                    'depth'       => '1',
+                                    'walker'         => class_exists( 'EFramework_Mega_Menu_Walker' ) ? new EFramework_Mega_Menu_Walker : '',
+                                );
+                                wp_nav_menu( $attr_menu );
+                            } ?>
+                            <!-- <div class="evolt-topbar-social">
+                                <?php /* evolt_social_header(); */ ?>
+                            </div> -->                           
                         </div>
                     </div>
                 </div>
