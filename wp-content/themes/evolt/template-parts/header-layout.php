@@ -19,6 +19,10 @@ $h_phone = evolt_get_option( 'h_phone' );
 $h_phone_link = evolt_get_option( 'h_phone_link' );
 $h_address = evolt_get_option( 'h_address' );
 $h_address_link = evolt_get_option( 'h_address_link' );
+$login_text = evolt_get_option( 'login_text' );
+$login_link = evolt_get_option( 'login_link' );
+$register_text = evolt_get_option( 'register_text' );
+$register_link = evolt_get_option( 'register_link' );
 $icon_has_children = evolt_get_option('icon_has_children', 'arrow');
 $language_switch = evolt_get_option('language_switch', false);
 $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => get_template_directory_uri().'/assets/images/logo-dark.png', 'id' => '' ) );
@@ -84,7 +88,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                     </div>
                                 <?php } ?>
                             <?php endif; ?>
-                            <?php if (has_nav_menu('menu-topbar')) {
+                            <?php /* if (has_nav_menu('menu-topbar')) {
                                 $attr_menu = array(
                                     'theme_location' => 'menu-topbar',
                                     'container'  => '',
@@ -96,7 +100,20 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                     'walker'         => class_exists('EFramework_Mega_Menu_Walker') ? new EFramework_Mega_Menu_Walker : '',
                                 );
                                 wp_nav_menu($attr_menu);
-                            } ?>
+                            } */ ?>
+                            <?php if(!is_user_logged_in()) : ?>
+                                    <?php if(!empty($login_text)) { ?>
+                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
+                                    <?php } else { ?>
+                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Sign In', 'evolt'); ?></a>
+                                    <?php } ?>
+
+                                    <?php if(!empty($register_text)) { ?>
+                                        / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
+                                    <?php } else { ?>
+                                        / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Sign Up', 'evolt'); ?></a>
+                                    <?php } ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -217,19 +234,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                         </div>
                                     <?php endif; ?>   
                                     <div class="evolt-header-user">
-                                        <?php if(!is_user_logged_in()) : ?>
-                                            <?php if(!empty($login_text)) { ?>
-                                                <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
-                                            <?php } else { ?>
-                                                <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
-                                            <?php } ?>
-
-                                            <?php if(!empty($register_text)) { ?>
-                                                / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
-                                            <?php } else { ?>
-                                                / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
-                                            <?php } ?>
-                                        <?php endif; ?>
+                                        
 
                                         <?php if(is_user_logged_in()) : ?>
                                             <div class="h-btn-icon-user h-btn-user">

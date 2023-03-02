@@ -51,8 +51,11 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                         <?php endif; ?>
                         <?php if(!empty($h_btn_text)) : ?>
                             <div class="evolt-topbar-right">
-                                <div class="evolt-topbar-button">
-                                    <a class="btn btn-third-dot" href="<?php echo esc_url(get_permalink($h_btn_link)); ?>"><?php echo esc_attr($h_btn_text); ?></a>
+                                <!-- <div class="evolt-topbar-button">
+                                    <a class="btn btn-third-dot" href="<?php /* echo esc_url(get_permalink($h_btn_link)); ?>"><?php echo esc_attr($h_btn_text); */ ?></a>
+                                </div> -->
+                                <div class="evolt-topbar-social">
+                                    <?php  evolt_social_header(); ?>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -102,7 +105,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                         <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
                                     </div>
                                 <?php endif; ?>  
-                                <div class="evolt-header-user">
+                                <div class=" icon-item evolt-header-user">
                                     <?php if(!is_user_logged_in()) : ?>
                                         <?php if(!empty($login_text)) { ?>
                                             <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 

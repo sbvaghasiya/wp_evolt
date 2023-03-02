@@ -238,18 +238,18 @@ ul.menu {
                     position: relative;
                     font-size: 15px;
                     color: rgba(#222, 0.87);
-                    &:before {
-                        content: '';
-                        width: 10px;
-                        height: 2px;
-                        background-color: $primary_color;
-                        position: absolute;
-                        top: 50%;
-                        left: -10px;
-                        @include transform(translate(0, -50%));
-                        opacity: 0;
-                        @include transition(all 220ms linear 0ms);
-                    }
+                    // &:before {
+                    //     content: '';
+                    //     width: 10px;
+                    //     height: 2px;
+                    //     background-color: $primary_color;
+                    //     position: absolute;
+                    //     top: 50%;
+                    //     left: -10px;
+                    //     @include transform(translate(0, -50%));
+                    //     opacity: 0;
+                    //     @include transition(all 220ms linear 0ms);
+                    // }
                 }
                 &.menu-item-has-children > a, &.page_item_has_children > a {
                     padding-right: 10px;

@@ -920,18 +920,18 @@ function evolt_product_nav() {
 function evolt_social_header() {
     $social_facebook_url = evolt_get_option( 'h_social_facebook_url' );
     $social_twitter_url = evolt_get_option( 'h_social_twitter_url' );
-    $social_dribbble_url = evolt_get_option( 'h_social_dribbble_url' );
-    $social_behance_url = evolt_get_option( 'h_social_behance_url' );
+    //$social_dribbble_url = evolt_get_option( 'h_social_dribbble_url' );
+    //$social_behance_url = evolt_get_option( 'h_social_behance_url' );
     $social_inkedin_url = evolt_get_option( 'h_social_inkedin_url' );
     $social_instagram_url = evolt_get_option( 'h_social_instagram_url' );
-    $social_google_url = evolt_get_option( 'h_social_google_url' );
-    $social_skype_url = evolt_get_option( 'h_social_skype_url' );
-    $social_pinterest_url = evolt_get_option( 'h_social_pinterest_url' );
-    $social_vimeo_url = evolt_get_option( 'h_social_vimeo_url' );
-    $social_youtube_url = evolt_get_option( 'h_social_youtube_url' );
-    $social_yelp_url = evolt_get_option( 'h_social_yelp_url' );
-    $social_tumblr_url = evolt_get_option( 'h_social_tumblr_url' );
-    $social_tripadvisor_url = evolt_get_option( 'h_social_tripadvisor_url' );
+    //$social_google_url = evolt_get_option( 'h_social_google_url' );
+    //$social_skype_url = evolt_get_option( 'h_social_skype_url' );
+    //$social_pinterest_url = evolt_get_option( 'h_social_pinterest_url' );
+    //$social_vimeo_url = evolt_get_option( 'h_social_vimeo_url' );
+    //$social_youtube_url = evolt_get_option( 'h_social_youtube_url' );
+    //$social_yelp_url = evolt_get_option( 'h_social_yelp_url' );
+    //$social_tumblr_url = evolt_get_option( 'h_social_tumblr_url' );
+    //$social_tripadvisor_url = evolt_get_option( 'h_social_tripadvisor_url' );
     if(!empty($social_facebook_url) || !empty($social_dribbble_url) || !empty($social_behance_url) || !empty($social_twitter_url) || !empty($social_inkedin_url) || !empty($social_instagram_url) || !empty($social_google_url) || !empty($social_skype_url) || !empty($social_pinterest_url) || !empty($social_vimeo_url) || !empty($social_youtube_url) || !empty($social_yelp_url) || !empty($social_tumblr_url) || !empty($social_tripadvisor_url)) : ?>
         <?php
         if(!empty($social_facebook_url)) :

@@ -42,7 +42,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                     <?php if(!empty($h_phone_label) || !empty($h_phone_link) || !empty($h_phone)) : ?>
                         <div class="evolt-header-phone evolt-hidden-lg">
                             <div class="evolt-header-phone-icon">
-                                <i class="flaticon-customer-support"></i>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
                             <div class="evolt-header-phone-meta">
                                 <a href="tel:<?php echo esc_attr($h_phone_link); ?>"><?php echo esc_attr($h_phone); ?></a>
@@ -81,6 +81,9 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
         </div>
         <div class="evolt-header-bottom evolt-hidden-lg">
             <div class="evolt-header-bottom-inner">
+                <div class="evolt-topbar-social">
+                    <?php  evolt_social_header(); ?>
+                </div>
                 <?php if ( has_nav_menu( 'menu-shop' ) ) { ?>
                     <div class="evolt-menu-shop">
                         <?php $attr_menu = array(
@@ -103,7 +106,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                         ?>
                         <div class="icon-item">
                             <a class="evolt-woosw-btn" href="<?php echo esc_url(get_permalink($woosw_id)); ?>"></a>
-                            <i class="flaticon-wishlist"></i>
+                            <i class="caseicon-heart-alt"></i>
                             <span class="wishlist-count">
                                 <?php echo WPcleverWoosw::get_count(); ?>
                             </span>
@@ -111,7 +114,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                     <?php endif; ?>
                     <?php if(class_exists('Woocommerce') && $cart_icon) : ?>
                         <div class="icon-item h-btn-cart">
-                            <i class="flaticon-add-to-cart"></i>
+                        <i class="caseicon-shopping-cart-alt"></i>
                             <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
                         </div>
                     <?php endif; ?>

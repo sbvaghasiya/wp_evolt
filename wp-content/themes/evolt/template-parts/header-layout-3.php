@@ -69,7 +69,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                     </div>
                                 <?php } ?>
                             <?php endif; ?>
-                            <?php if ( has_nav_menu( 'menu-topbar' ) ) {
+                            <?php /* if ( has_nav_menu( 'menu-topbar' ) ) {
                                 $attr_menu = array(
                                     'theme_location' => 'menu-topbar',
                                     'container'  => '',
@@ -81,10 +81,23 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                     'walker'         => class_exists( 'EFramework_Mega_Menu_Walker' ) ? new EFramework_Mega_Menu_Walker : '',
                                 );
                                 wp_nav_menu( $attr_menu );
-                            } ?>
+                            }*/ ?>
                             <!-- <div class="evolt-topbar-social">
                                 <?php /* evolt_social_header(); */ ?>
-                            </div> -->                           
+                            </div> -->  
+                            <?php if(!is_user_logged_in()) : ?>
+                                <?php if(!empty($login_text)) { ?>
+                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
+                                <?php } else { ?>
+                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
+                                <?php } ?>
+
+                                <?php if(!empty($register_text)) { ?>
+                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
+                                <?php } else { ?>
+                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
+                                <?php } ?>
+                            <?php endif; ?>                         
                         </div>
                     </div>
                 </div>
@@ -126,20 +139,6 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                             <?php endif; ?>
                         </div>
                         <div class="evolt-header-user">
-                            <?php if(!is_user_logged_in()) : ?>
-                                <?php if(!empty($login_text)) { ?>
-                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
-                                <?php } else { ?>
-                                    <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
-                                <?php } ?>
-
-                                <?php if(!empty($register_text)) { ?>
-                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
-                                <?php } else { ?>
-                                    / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
-                                <?php } ?>
-                            <?php endif; ?>
-
                             <?php if(is_user_logged_in()) : ?>
                                 <div class="h-btn-icon-user h-btn-user">
                                 <i class="fa fa-user-o" aria-hidden="true"></i>

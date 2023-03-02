@@ -57,20 +57,6 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                         <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
                                     <?php } ?>
                                 <?php endif; ?>
-
-                                <?php if(is_user_logged_in()) : ?>
-                                    <div class="h-btn-icon-user h-btn-user">
-                                        <i class="flaticon-user"></i>
-                                        <ul class="evolt-user-account">
-                                            <?php if(class_exists('WooCommerce') ) :
-                                                $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
-                                                ?>
-                                                <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
-                                            <?php endif; ?>
-                                            <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -118,6 +104,19 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                 <?php endif; ?>
                                 <?php if($search_icon) : ?>
                                     <div class="icon-item h-btn-search"><i class="flaticon-search"></i></div>
+                                <?php endif; ?>
+                                <?php if(is_user_logged_in()) : ?>
+                                    <div class="h-btn-icon-user h-btn-user">
+                                        <i class="flaticon-user"></i>
+                                        <ul class="evolt-user-account">
+                                            <?php if(class_exists('WooCommerce') ) :
+                                                $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
+                                                ?>
+                                                <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
+                                            <?php endif; ?>
+                                            <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
+                                        </ul>
+                                    </div>
                                 <?php endif; ?>
                             </div>
                         </div>

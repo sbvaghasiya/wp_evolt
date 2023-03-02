@@ -16,6 +16,10 @@ $h_phone_label = evolt_get_option('h_phone_label');
 $h_phone = evolt_get_option('h_phone');
 $language_switch = evolt_get_option('language_switch', false);
 $h_phone_link = evolt_get_option('h_phone_link');
+$login_text = evolt_get_option( 'login_text' );
+$login_link = evolt_get_option( 'login_link' );
+$register_text = evolt_get_option( 'register_text' );
+$register_link = evolt_get_option( 'register_link' );
 $default_mobile_logo = evolt_get_option('default_mobile_logo', array('url' => get_template_directory_uri() . '/assets/images/logo-dark.png', 'id' => ''));
 ?>
 <header id="evolt-masthead">
@@ -61,7 +65,7 @@ $default_mobile_logo = evolt_get_option('default_mobile_logo', array('url' => ge
                                     </div>
                                 <?php } ?>
                             <?php endif; ?>
-                            <?php if (has_nav_menu('menu-topbar')) {
+                            <?php /* if (has_nav_menu('menu-topbar')) {
                                 $attr_menu = array(
                                     'theme_location' => 'menu-topbar',
                                     'container'  => '',
@@ -73,7 +77,20 @@ $default_mobile_logo = evolt_get_option('default_mobile_logo', array('url' => ge
                                     'walker'         => class_exists('EFramework_Mega_Menu_Walker') ? new EFramework_Mega_Menu_Walker : '',
                                 );
                                 wp_nav_menu($attr_menu);
-                            } ?>
+                            } */ ?>
+                            <?php if(!is_user_logged_in()) : ?>
+                                    <?php if(!empty($login_text)) { ?>
+                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
+                                    <?php } else { ?>
+                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Sign In', 'evolt'); ?></a>
+                                    <?php } ?>
+
+                                    <?php if(!empty($register_text)) { ?>
+                                        / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
+                                    <?php } else { ?>
+                                        / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Sign Up', 'evolt'); ?></a>
+                                    <?php } ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -174,7 +191,7 @@ $default_mobile_logo = evolt_get_option('default_mobile_logo', array('url' => ge
                                     <span class="widget_cart_counter">2</span>
                                 </div>
                             </div>
-                            <div class="evolt-header-user">
+                            <!-- <div class="evolt-header-user">
 
                                 <div class="h-btn-icon-user h-btn-user">
                                     <i class="fa fa-user-o" aria-hidden="true"></i>
@@ -183,7 +200,20 @@ $default_mobile_logo = evolt_get_option('default_mobile_logo', array('url' => ge
                                         <li><a href="http://localhost/wp_evolt/wp-login.php?action=logout&amp;_wpnonce=dc7f75eefe">Log Out</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
+                            <?php if(is_user_logged_in()) : ?>
+                                <div class="h-btn-icon-user h-btn-user">
+                                <i class="fa fa-user-o" aria-hidden="true"></i>
+                                    <ul class="evolt-user-account">
+                                        <?php if(class_exists('WooCommerce') ) :
+                                            $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
+                                            ?>
+                                            <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
+                                        <?php endif; ?>
+                                        <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
+                                    </ul>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <div class="evolt-menu-overlay"></div>
