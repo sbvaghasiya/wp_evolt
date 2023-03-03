@@ -11,6 +11,10 @@ if(isset($sticky_header_type_page) && !empty($sticky_header_type_page) && $stick
 
 $h_topbar = evolt_get_option( 'h_topbar', 'show' );
 $wellcome = evolt_get_option( 'wellcome' );
+$h_phone = evolt_get_option( 'h_phone' );
+$h_phone_link = evolt_get_option( 'h_phone_link' );
+$h_address = evolt_get_option( 'h_address' );
+$h_address_link = evolt_get_option( 'h_address_link' );
 $login_text = evolt_get_option( 'login_text' );
 $login_link = evolt_get_option( 'login_link' );
 $register_text = evolt_get_option( 'register_text' );
@@ -32,16 +36,21 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                     <div class="row">
                         <?php if(!empty($wellcome)) : ?>
                             <div class="evolt-topbar-left">
-                                <?php if(!empty($wellcome)) : ?>
+                                <?php if(!empty($h_phone)) : ?>
                                     <div class="evolt-topbar-item">
-                                        <?php echo wp_kses_post($wellcome); ?>
+                                        <a href="tel:<?php echo esc_attr($h_phone_link); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo wp_kses_post($h_phone); ?></a>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if(!empty($h_address)) : ?>
+                                    <div class="evolt-topbar-item">
+                                        <a href="mailto:<?php echo esc_url($h_address_link); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i><?php echo wp_kses_post($h_address); ?></a>
                                     </div>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
-                        <div class="evolt-topbar-social">
-                            <?php evolt_social_header(); ?>
-                        </div>
+                        <!-- <div class="evolt-topbar-social">
+                            <?php // evolt_social_header(); ?>
+                        </div> -->
                         <?php if(!empty($login_text) || !empty($register_text)) : ?>
                             <div class="evolt-topbar-right evolt-topbar-user">
                                 <?php if(!is_user_logged_in()) : ?>
@@ -84,6 +93,9 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                         </nav>
                         <div class="evolt-header-right">
                             <div class="evolt-header-icons">
+                                <?php if($search_icon) : ?>
+                                    <div class="icon-item h-btn-search"><i class="flaticon-search"></i></div>
+                                <?php endif; ?>
                                 <?php if($wishlist_icon && class_exists('WPCleverWoosw')) : 
                                     $woosw_id = get_option( 'woosw_page_id' );
                                     ?>
@@ -98,16 +110,13 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                 <?php endif; ?>
                                 <?php if(class_exists('Woocommerce') && $cart_icon) : ?>
                                     <div class="icon-item h-btn-cart">
-                                        <i class="flaticon-cart-1"></i>
+                                    <i class="caseicon-shopping-cart-alt"></i>
                                         <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
                                     </div>
-                                <?php endif; ?>
-                                <?php if($search_icon) : ?>
-                                    <div class="icon-item h-btn-search"><i class="flaticon-search"></i></div>
-                                <?php endif; ?>
+                                <?php endif; ?>                                
                                 <?php if(is_user_logged_in()) : ?>
-                                    <div class="h-btn-icon-user h-btn-user">
-                                        <i class="flaticon-user"></i>
+                                    <div class="icon-item h-btn-icon-user h-btn-user">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
                                         <ul class="evolt-user-account">
                                             <?php if(class_exists('WooCommerce') ) :
                                                 $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 

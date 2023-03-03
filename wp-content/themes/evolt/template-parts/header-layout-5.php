@@ -107,17 +107,22 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                 <?php endif; ?>  
                                 <div class=" icon-item evolt-header-user">
                                     <?php if(!is_user_logged_in()) : ?>
-                                        <?php if(!empty($login_text)) { ?>
-                                            <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
-                                        <?php } else { ?>
-                                            <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
-                                        <?php } ?>
+                                        <div class="h-btn-icon-user h-btn-user">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                        <ul class="evolt-user-account">
+                                            <?php if(!empty($login_text)) { ?>
+                                                <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a></li> 
+                                            <?php } else { ?>
+                                                <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a></li>
+                                            <?php } ?>
 
-                                        <?php if(!empty($register_text)) { ?>
-                                            / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
-                                        <?php } else { ?>
-                                            / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
-                                        <?php } ?>
+                                            <?php if(!empty($register_text)) { ?>
+                                                <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a></li>
+                                            <?php } else { ?>
+                                                <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                        </div>
                                     <?php endif; ?>
 
                                     <?php if(is_user_logged_in()) : ?>

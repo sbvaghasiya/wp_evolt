@@ -14,6 +14,10 @@ $cart_icon = evolt_get_option( 'cart_icon', false );
 $h_phone_label = evolt_get_option( 'h_phone_label' );
 $h_phone = evolt_get_option( 'h_phone' );
 $h_phone_link = evolt_get_option( 'h_phone_link' );
+$login_text = evolt_get_option( 'login_text' );
+$login_link = evolt_get_option( 'login_link' );
+$register_text = evolt_get_option( 'register_text' );
+$register_link = evolt_get_option( 'register_link' );
 $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => get_template_directory_uri().'/assets/images/logo-dark.png', 'id' => '' ) );
 ?>
 <header id="evolt-masthead">
@@ -118,10 +122,29 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                             <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
                         </div>
                     <?php endif; ?>
-                    <?php if(function_exists('up_get_template_part') && $user_icon) : ?>
-                        <div class="icon-item h-btn-user">
-                            <i class="flaticon-user"></i>
-                            <?php if(is_user_logged_in()) : ?>
+                    <div class=" icon-item evolt-header-user">
+                        <?php if(!is_user_logged_in()) : ?>
+                            <div class="h-btn-icon-user h-btn-user">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            <ul class="evolt-user-account">
+                                <?php if(!empty($login_text)) { ?>
+                                    <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a></li> 
+                                <?php } else { ?>
+                                    <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a></li>
+                                <?php } ?>
+
+                                <?php if(!empty($register_text)) { ?>
+                                     <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a></li>
+                                <?php } else { ?>
+                                     <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a></li>
+                                <?php } ?>
+                            </ul>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if(is_user_logged_in()) : ?>
+                            <div class="h-btn-icon-user h-btn-user">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
                                 <ul class="evolt-user-account">
                                     <?php if(class_exists('WooCommerce') ) :
                                         $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
@@ -130,9 +153,9 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                     <?php endif; ?>
                                     <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
                                 </ul>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>                     
                 </div>
             </div>
         </div>

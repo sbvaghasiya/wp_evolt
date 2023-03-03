@@ -233,9 +233,7 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                             <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
                                         </div>
                                     <?php endif; ?>   
-                                    <div class="evolt-header-user">
-                                        
-
+                                    <div class="icon-item evolt-header-user">                                        
                                         <?php if(is_user_logged_in()) : ?>
                                             <div class="h-btn-icon-user h-btn-user">
                                             <i class="fa fa-user-o" aria-hidden="true"></i>

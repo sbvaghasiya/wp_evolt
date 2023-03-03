@@ -14,6 +14,10 @@ $cart_icon = evolt_get_option( 'cart_icon', false );
 $h_topbar = evolt_get_option( 'h_topbar', 'show' );
 $short_text = evolt_get_option( 'short_text' );
 $wellcome = evolt_get_option( 'wellcome' );
+$h_phone = evolt_get_option( 'h_phone' );
+$h_phone_link = evolt_get_option( 'h_phone_link' );
+$h_address = evolt_get_option( 'h_address' );
+$h_address_link = evolt_get_option( 'h_address_link' );
 $login_text = evolt_get_option( 'login_text' );
 $login_link = evolt_get_option( 'login_link' );
 $register_text = evolt_get_option( 'register_text' );
@@ -36,9 +40,18 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
             <div id="evolt-header-top" class="evolt-header-top3">
                 <div class="container">
                     <div class="row">
-                        <?php if(!empty($wellcome)) : ?>
-                            <div class="evolt-topbar-wellcome">
-                                <?php echo wp_kses_post($wellcome); ?>
+                    <?php if(!empty($wellcome)) : ?>
+                            <div class="evolt-topbar-left">                               
+                                <?php if(!empty($h_phone)) : ?>
+                                <div class="evolt-topbar-item">
+                                    <a href="tel:<?php echo esc_attr($h_phone_link); ?>"><i class="fa fa-phone" aria-hidden="true"></i><?php echo wp_kses_post($h_phone); ?></a>
+                                </div>
+                                <?php endif; ?>
+                                <?php if(!empty($h_address)) : ?>
+                                    <div class="evolt-topbar-item">
+                                        <a href="mailto:<?php echo esc_url($h_address_link); ?>"><i class="fa fa-envelope-o" aria-hidden="true"></i><?php echo wp_kses_post($h_address); ?></a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                         <div class="evolt-topbar-right">

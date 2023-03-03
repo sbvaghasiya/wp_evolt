@@ -115,20 +115,24 @@ if($custom_main_header && !empty($btn_custom_text)) {
                                     <span class="widget_cart_counter"><?php echo sprintf (_n( '%d', '%d', WC()->cart->cart_contents_count, 'evolt' ), WC()->cart->cart_contents_count ); ?></span>
                                 </div>
                             <?php endif; ?>
-                            
-                            <div class="icon-item evolt-header-user">
+                            <div class=" icon-item evolt-header-user">
                                 <?php if(!is_user_logged_in()) : ?>
-                                    <?php if(!empty($login_text)) { ?>
-                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
-                                    <?php } else { ?>
-                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
-                                    <?php } ?>
+                                    <div class="h-btn-icon-user h-btn-user">
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    <ul class="evolt-user-account">
+                                        <?php if(!empty($login_text)) { ?>
+                                            <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a></li> 
+                                        <?php } else { ?>
+                                            <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a></li>
+                                        <?php } ?>
 
-                                    <?php if(!empty($register_text)) { ?>
-                                        / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
-                                    <?php } else { ?>
-                                        / <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
-                                    <?php } ?>
+                                        <?php if(!empty($register_text)) { ?>
+                                            <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a></li>
+                                        <?php } else { ?>
+                                            <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a></li>
+                                        <?php } ?>
+                                    </ul>
+                                    </div>
                                 <?php endif; ?>
 
                                 <?php if(is_user_logged_in()) : ?>
@@ -144,23 +148,7 @@ if($custom_main_header && !empty($btn_custom_text)) {
                                         </ul>
                                     </div>
                                 <?php endif; ?>
-                            </div>     
-                            
-                            <?php if(function_exists('up_get_template_part') && $user_icon) : ?>
-                                <div class="icon-item h-btn-user">
-                                    <i class="flaticon-user"></i>
-                                    <?php if(is_user_logged_in()) : ?>
-                                        <ul class="evolt-user-account">
-                                            <?php if(class_exists('WooCommerce') ) :
-                                                $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
-                                                ?>
-                                                <li><a href="<?php echo esc_url(get_permalink($my_ac)); ?>"><?php echo esc_html__('My Account', 'evolt'); ?></a></li>
-                                            <?php endif; ?>
-                                            <li><a href="<?php echo esc_url(wp_logout_url()); ?>"><?php echo esc_html__('Log Out', 'evolt'); ?></a></li>
-                                        </ul>
-                                    <?php endif; ?>
-                                </div>
-                            <?php endif; ?>
+                            </div>   
                         </div>
                     </div>
                     <div class="evolt-menu-overlay"></div>
