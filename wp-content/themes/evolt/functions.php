@@ -478,3 +478,39 @@ function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
 add_filter( 'woocommerce_product_variation_title_include_attributes', '__return_true' );
 
 //---------------------------------------------------------------------------------------------------------------------
+
+//------------------------------------Customize side-bar link's label/order on my account page-------------------------
+
+add_filter('woocommerce_account_menu_items', 'customize_account__links');
+function customize_account__links( $items ) {
+
+	$dashboard = $items['dashboard'];
+	$orders = $items['orders'];
+	$downloads = $items['downloads'];
+	$edit_address = $items['edit-address'];
+	$edit_account = $items['edit-account'];
+	$customer_logout = $items['customer-logout'];
+	$wishlist = $items['wishlist'];
+
+	unset( $items['dashboard'] );
+	unset( $items['orders'] );
+	unset( $items['downloads'] );
+	unset( $items['edit-address'] );
+	unset( $items['edit-account'] );
+	unset( $items['customer-logout'] );
+	unset( $items['wishlist'] );
+
+	$items['dashboard'] = $dashboard;
+	$items['orders'] = $orders;
+	$items['downloads'] = $downloads;
+	$items['edit-address'] = $edit_address;
+	$items['edit-account'] = $edit_account;
+	$items['wishlist'] = $wishlist;
+	$items['customer-logout'] = $customer_logout;
+
+
+    $items['dashboard'] = __( 'My Account', 'text-domain' );
+    return $items;
+}
+
+//---------------------------------------------------------------------------------------------------------------------

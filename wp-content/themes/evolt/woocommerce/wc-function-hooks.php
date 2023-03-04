@@ -385,7 +385,7 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 						$args = array(
 							'post_type' => 'product',
 							'posts_per_page' => 2,
-							// 'orderby' => 'date',
+							'orderby' => 'rand',
 							'no_found_rows' => true,
 						);
 						$counter = 1;
@@ -403,16 +403,26 @@ function evolt_woo_mini_cart_item_fragment( $fragments ) {
 								?>
 
 								<div class="col-6">
-									<div class="card-image">
-										<img src="<?php echo $image[0]; ?>" alt="" class="img-fluid">
-									</div>
-									<div class="card-contact">
-										<p class="mb-0"><?php echo $rand_pro_title; ?></p>
-										<div class="d-flex card-contact-price">
-											<span class="new_price"><?php echo wc_price($rand_pro_regular_price); ?></span>
-											<span class="old_price"><?php echo wc_price($rand_pro_sale_price); ?></span>
+									<a href="<?php echo $random_product->get_permalink(); ?>">
+										<div class="card-image">
+											<img src="<?php echo $image[0]; ?>" alt="" class="img-fluid">
 										</div>
-									</div>
+										<div class="card-contact">
+											<p class="mb-0"><?php echo $rand_pro_title; ?></p>
+											<div class="d-flex card-contact-price">
+											<?php if($random_product->has_child()){ ?>
+												<span class="variation_price"><?php echo $random_product->get_price_html(); ?></span>
+											<?php }else{ 
+												if( !empty($rand_pro_sale_price) && $rand_pro_sale_price != 0 ){ ?>
+													<span class="new_price"><?php echo wc_price($rand_pro_sale_price); ?></span>
+													<span class="old_price"><?php echo wc_price($rand_pro_regular_price); ?></span>
+												<?php }else{ ?>
+													<span class="new_price"><?php echo wc_price($rand_pro_regular_price); ?></span>
+												<?php } ?>
+											<?php } ?>
+											</div>
+										</div>
+									</a>
 								</div>
 
 								<?php
