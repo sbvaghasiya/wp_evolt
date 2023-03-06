@@ -173,7 +173,7 @@
 			flex-wrap: nowrap;
 			align-items: center;
 			.site-header-lang {
-				padding-right: 20px;
+				padding-right: 	0px;
 				position: relative;
 				&:before {
 					content: '';
@@ -959,7 +959,7 @@
 					justify-content: space-between;
 					.evolt-main-navigation{
 						display: flex;
-						justify-content: center;
+						justify-content: start;
 						align-items: center;
 						width: 100%;
 						.evolt-main-navigation-inner{
@@ -1216,7 +1216,7 @@
 			.evolt-header-right {
 				display: flex;
 				align-items: center;
-				padding: 0 15px;
+				padding: 0 0 0 15px;
 				.evolt-header-user {
 					margin-right: 15px;
 					font-size: 15px;
@@ -1282,7 +1282,7 @@
 					text-align: center;
 					position: relative;
 					cursor: pointer;
-					margin-right: 20px;
+					// margin-right: 20px;
 					background-color: rgba(255, 255, 255, 0.2);
 					color: #fff;
 					border-radius: 50%;
@@ -1519,7 +1519,7 @@
 				background: #fff;
 				.details_top_header{
 					flex-grow: 1;
-					padding: 12px 15px !important;
+					padding: 12px 0px !important;
     				border-bottom: 1px solid rgba(176,176,176,0.3);
 					min-height: 48px;
 					.evolt-topbar-item{
@@ -1618,7 +1618,8 @@
 					flex-grow: 1;
 					background-color: #333;
 					border-radius: 5px;
-					padding: 8px 3px;
+					padding: 8px 15px;
+					margin: 0;
 					.evolt-main-navigation{
 						.evolt-main-menu > li {
 							margin: 0 19px;
@@ -1783,7 +1784,7 @@
 					font-style: normal;
 					font-weight: 500;
 					font-size: 18px;
-					line-height: 26px;
+					line-height: 65px;
 					letter-spacing: 0.02em;
 					text-transform: capitalize;					
 				}
@@ -2088,20 +2089,20 @@
 								font-family: 'Jost';
 								font-style: normal;
 								font-weight: 500;
-								font-size: 18px;
-								line-height: 26px;
+								font-size: 16px;
+								line-height: 23px;
 								letter-spacing: 0.02em;
-								color: #333;
+								color: #333333;
 							}
 							label {
 								display: block;
 								font-family: 'Jost';
 								font-style: normal;
 								font-weight: 500;
-								font-size: 14px;
-								line-height: 20px;
+								font-size: 16px;
+								line-height: 23px;
 								letter-spacing: 0.02em;
-								color: #555;
+								color: #333333;
 							}
 						}
 					}
@@ -2458,7 +2459,7 @@
 					bottom: -35px;
 					margin-top: -35px;
 					.evolt-topbar-social{
-						padding: 0 15px;
+						padding: 0px 15px 0 0px;
 						a{
 							color: #000;
 							height: 45px;
@@ -2532,7 +2533,6 @@
 				flex-wrap: wrap;
 				align-items: center;
 				.widget_cart_counter, .wishlist-count {
-					opacity: 0;
 					@include transition(.3s cubic-bezier(.24,.74,.58,1));
 				}
 				.icon-item {
@@ -2564,12 +2564,7 @@
 						left: 0;
 						width: 100%;
 						height: 100%;
-					}
-					&:hover {
-						.widget_cart_counter, .wishlist-count {
-							opacity: 1;
-						}
-					}
+					}					
 					.h-btn-icon-user{
 						width: 45px;
 						height: 45px;
@@ -2580,45 +2575,10 @@
 			}
 		}
 		&.evolt-header-layout9 {
-			font-family: 'Roboto', sans-serif;
 			background-color: transparent;
 			margin-bottom: -40px;
-			.evolt-heading .item--title {
-				font-family: inherit !important;
-			}
-			.menu-icon-plus::before, .menu-icon-plus::after {
-				background-color: #071c1f;
-			}
-			.evolt-main-menu {
-				> li {
-					margin: 0 18px;
-					> a {
-						line-height: 80px;
-						font-family: inherit;
-						font-weight: 500;
-						color: #fff;
-					}
-					&:hover > a,
-	                &.current_page_item > a,
-	                &.current-menu-item > a,
-	                &.current_page_ancestor > a,
-	                &.current-menu-ancestor > a {
-						color: $primary_color;
-						.menu-icon-plus::before, .menu-icon-plus::after {
-							background-color: $primary_color;
-						}
-					}
-				}
-				li a {
-					font-family: inherit;
-					font-weight: 500;
-				}
-				.sub-menu {
-					z-index: 999;
-				}
-			}
-			#evolt-header-middle {
-				.evolt-header-branding {
+			#evolt-header-middle{
+				.evolt-header-branding{
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
@@ -2653,31 +2613,92 @@
 								font-family: 'Jost';
 								font-style: normal;
 								font-weight: 500;
-								font-size: 18px;
-								line-height: 26px;
-								letter-spacing: 0.02em;
-								color: #333;
+								font-size: 20px;
+								line-height: 29px;
+								letter-spacing: 0.02em;								
+								color: #333333;
 							}
 							label{
 								display: block;
 								font-family: 'Jost';
 								font-style: normal;
-								font-weight: 500;
-								font-size: 14px;
-								line-height: 20px;
+								font-weight: 400;
+								font-size: 16px;
+								line-height: 23px;
 								letter-spacing: 0.02em;
-								color: #555;
+								color: #333333;
 							}
 						}
 					}
 					img {
 						max-height: 78px;
 					}
+					.evolt-header-right{
+						.evolt-header-shop-icons{
+							display: flex;
+							flex-wrap: wrap;
+							align-items: center;
+							.icon-item{
+								background: linear-gradient(156.73deg, #dfb4b4 0.25%, #9e6f6f 92.32%);
+								position: relative;
+								cursor: pointer;
+								height: 45px;
+								width: 45px;
+								color: #fff;
+								line-height: 45px;
+								border-radius: 50px;
+								text-align: center;
+								margin: 0 7px;
+								font-size: 19px;
+								transition: 0.3s cubic-bezier(0.24, 0.74, 0.58, 1);
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								i{
+									max-height: 45px;
+								}
+							}
+						}
+					}
 				}
-			}
+			}					
 			.evolt-header-main {
 				.evolt-header-navigation {
 					flex-grow: 1;
+					.evolt-main-navigation-inner{
+						.evolt-main-menu {
+							> li {
+								margin: 0 18px;
+								> a {
+									font-family: 'Jost';
+									font-style: normal;
+									font-weight: 500;
+									font-size: 18px;
+									line-height: 80px;
+									letter-spacing: 0.02em;
+									text-transform: capitalize;
+									color: #FFFFFF;
+								}
+								&:hover > a,
+								&.current_page_item > a,
+								&.current-menu-item > a,
+								&.current_page_ancestor > a,
+								&.current-menu-ancestor > a {
+									color: #fff;
+									.menu-icon-plus::before, .menu-icon-plus::after {
+										background-color: #fff;
+									}
+								}
+							}
+							li a {
+								font-family: inherit;
+								font-weight: 500;
+							}
+							.sub-menu {
+								z-index: 999;
+							}
+						}	
+					}
 				}
 				&:not(.h-fixed) {
 					// max-width: 1170px;
@@ -2685,7 +2706,7 @@
 					background: #9E6F6F;
 					border-radius: 0px;
 					padding: 0 15px;
-					border: 1px solid #f6f6f6;
+					// border: 1px solid #f6f6f6;
 				}
 				&.h-fixed {
 					.evolt-menu-shop {
@@ -2697,61 +2718,48 @@
 							max-height: 55px;
 						}
 					}
-				}
-			}
-			.evolt-menu-shop {
-				.evolt-icon-menu-lg {
-					left: 20px;
-					width: 23px;
-					height: 14px;
-					i, &:before, &:after {
-						background-color: #fff;
-						height: 2px;
-					}
-				}
-				> li {
-					margin: 0;
-					> a {
-						line-height: 50px;
-						background-color: $primary_color;
-						min-width: 260px;
-						border-radius: 25px;
-						padding-left: 60px;
-						padding-right: 30px;
-						font-size: 16px;
-						font-weight: 500;
-						color: #fff;
-						.evolt-icon-menu-lg {
-							display: block;
-						}
-						&:after {
-							position: absolute;
-							right: 16px;
-							font-size: 10px;
-							top: 50%;
-							@include transform(translate(0, -50%));
+					.evolt-main-menu {
+						> li{
+							> a{
+								color: #000 !important;
+							}
 						}
 					}
-					&:hover > a {
-						color: #fff;
-						border-radius: 25px 25px 0 0;
-						.link-icon {
-							color: inherit;
-						}
-						&:after {
-							@include transform(translate(0, -50%) scaleY(-1));
+					.evolt-header-product-search3{
+						.product-search-meta{
+							border: 1px solid #ababab;
 						}
 					}
-					.link-icon {
-						line-height: normal;
-						display: inline-flex;
+				}
+				.evolt-header-product-search3{
+					.product-searchform{
+						.product-search-meta{
+							border-radius: 45px;
+							.product-search-category{
+								display: none;
+							}
+							input{
+								color: #b0b0b0;
+								background: #fff;
+								border-radius: 45px;
+								font-family: 'Jost';
+								font-style: normal;
+								font-weight: 400;
+								font-size: 16px;
+								line-height: 23px;
+								letter-spacing: 0.02em;
+								text-transform: capitalize;
+								min-width: 400px;
+							}
+							.product-search-submit {
+								border-radius: 0 45px 45px 0;
+								color: #b0b0b0;
+								background: transparent;
+							}
+						}
 					}
 				}
-				.sub-menu {
-					@include box-shadow(0 0 25px rgba(0,0,0,0.014));
-					min-width: 260px;
-				}
-			}
+			}			
 		}
 		&.evolt-header-layout10 {
 			font-family: 'Roboto', sans-serif;
@@ -2942,6 +2950,57 @@
 	}
 }
 
+
+
+.evolt-user-account{
+	li{
+		span{
+			color: #9E6F6F !important;
+			display: block !important;
+			padding: 8px 0 !important;
+			background-color: transparent !important;
+			text-transform: capitalize;
+			font-family: 'Jost' !important;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px !important;
+			line-height: 26px !important;
+			letter-spacing: 0.02em;
+			i{
+				margin-right: 10px;
+			}
+		}
+		a{
+			font-family: 'Jost' !important;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px !important;
+			line-height: 26px !important;
+			color: #555555 !important;
+			i{
+				margin-right: 10px;
+			}
+		}
+		&:last-child{
+			a{
+				color: #FF0000 !important;
+			}
+		}
+	}				
+	&.register_box{
+		li{
+			&:last-child{
+				a{
+					color: #555555 !important;
+				}
+			}
+		}
+	}
+}
+
+
+
+	
 @media #{$max-lg} {
 	#evolt-header-wrap {
 		position: relative;
@@ -3133,7 +3192,7 @@
 	top: 100%;
 	right: 0;
 	background-color: #fff;
-	min-width: 180px;
+	min-width: 205px;
 	border-radius: 5px;
 	margin-top: 35px;
 	padding: 8px 20px;

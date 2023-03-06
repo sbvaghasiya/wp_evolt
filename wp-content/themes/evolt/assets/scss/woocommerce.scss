@@ -3867,6 +3867,14 @@ th.product-subtotal {
 		}
 	}
 }
+body.woocommerce-shop{
+	.widget_product_search{
+		margin-bottom: 25px !important;
+		.widget-content{
+			border: none;
+		}
+	}
+}
 body.woocommerce-cart {
 	.woocommerce-cart-form {
 		table.cart {
