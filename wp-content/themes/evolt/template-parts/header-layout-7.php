@@ -117,13 +117,13 @@ $h_phone_link = evolt_get_option( 'h_phone_link' );
                                         <i class="fa fa-user-o" aria-hidden="true"></i>
                                         <ul class="evolt-user-account register_box">
                                             <?php if(!empty($login_text)) { ?>
-                                                <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a></li> 
+                                                <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><i class="fa fa-sign-in" aria-hidden="true"></i><?php echo esc_attr($login_text); ?></a></li> 
                                             <?php } else { ?>
                                                 <li><a href="<?php echo esc_url(get_permalink($login_link)); ?>"><i class="fa fa-sign-in" aria-hidden="true"></i><?php echo esc_html__('Login', 'evolt'); ?></a></li>
                                             <?php } ?>
 
                                             <?php if(!empty($register_text)) { ?>
-                                                <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a></li>
+                                                <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><i class="fa fa-user-plus" aria-hidden="true"></i><?php echo esc_attr($register_text); ?></a></li>
                                             <?php } else { ?>
                                                 <li><a href="<?php echo esc_url(get_permalink($register_link)); ?>"><i class="fa fa-user-plus" aria-hidden="true"></i><?php echo esc_html__('Register', 'evolt'); ?></a></li>
                                             <?php } ?>

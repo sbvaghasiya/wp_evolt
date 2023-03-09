@@ -1748,3 +1748,86 @@
         }
     }
 }
+
+
+
+// new layout custome css
+
+.evolt-product-carousel1  {
+    .carousel-item{
+        .grid-item-inner {
+            .woocommerce-product-inner{
+                .woocommerce-product-header{
+                    .woocommerce-product-details{
+                        &:before{
+                            z-index: 1;
+                        }
+                        img{
+                            padding: 15px 15px 0px;
+                        }
+                    }
+                    .woocommerce-product-meta{
+                        top: 26px;
+                        flex-direction: column;
+                        align-items: end;
+                        .woocommerce-compare{
+                            position: unset;
+                            button{
+                                width: 38px;
+                                border-radius: 5px;                            
+                            }
+                        }
+                        .woocommerce-wishlist{
+                            button{
+                                width: 38px;
+                                border-radius: 5px;                           
+                            }
+                        }
+                        > div {
+                            width: 38px;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .woocommerce-add-to-cart{
+                        position: absolute;
+                        bottom: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        padding: 0 15px;
+                        width: 100%;
+                        a{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+                .woocommerce-product-content{
+                    text-align: center;
+                    .woocommerce-product--title{
+                        margin-top: 15px;
+                        a{
+                            font-weight: 500;
+                        }
+                    }
+                    .woocommerce-product--rating {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+                &:hover{
+                    .woocommerce-product-header{
+                        .woocommerce-add-to-cart{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
