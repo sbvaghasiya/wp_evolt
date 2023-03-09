@@ -51,23 +51,6 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                         <!-- <div class="evolt-topbar-social">
                             <?php // evolt_social_header(); ?>
                         </div> -->
-                        <?php if(!empty($login_text) || !empty($register_text)) : ?>
-                            <div class="evolt-topbar-right evolt-topbar-user">
-                                <?php if(!is_user_logged_in()) : ?>
-                                    <?php if(!empty($login_text)) { ?>
-                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_attr($login_text); ?></a> 
-                                    <?php } else { ?>
-                                        <a href="<?php echo esc_url(get_permalink($login_link)); ?>"><?php echo esc_html__('Login', 'evolt'); ?></a>
-                                    <?php } ?>
-
-                                    <?php if(!empty($register_text)) { ?>
-                                        <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_attr($register_text); ?></a>
-                                    <?php } else { ?>
-                                        <a href="<?php echo esc_url(get_permalink($register_link)); ?>"><?php echo esc_html__('Register', 'evolt'); ?></a>
-                                    <?php } ?>
-                                <?php endif; ?>
-                            </div>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -138,7 +121,8 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                         <div class="h-btn-icon-user h-btn-user">
                                         <i class="fa fa-user-o" aria-hidden="true"></i>
                                             <ul class="evolt-user-account">
-                                                <li><span><i class="fa fa-user-o" aria-hidden="true"></i> Hi! John Smith</span></li>
+                                                <?php global $current_user; ?>
+                                                <li><span><i class="fa fa-user-o" aria-hidden="true"></i> <?php echo "Hi! ".$current_user->first_name." ".$current_user->last_name; ?></span></li>
                                                 <?php if(class_exists('WooCommerce') ) :
                                                     $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
                                                     ?>

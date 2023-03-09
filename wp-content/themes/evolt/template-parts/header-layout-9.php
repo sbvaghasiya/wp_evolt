@@ -81,7 +81,8 @@ $default_mobile_logo = evolt_get_option( 'default_mobile_logo', array( 'url' => 
                                         <div class="h-btn-icon-user h-btn-user">
                                             <i class="fa fa-user-o" aria-hidden="true"></i>
                                             <ul class="evolt-user-account">
-                                                <li><span><i class="fa fa-user-o" aria-hidden="true"></i> Hi! John Smith</span></li>
+                                                <?php global $current_user; ?>
+                                                <li><span><i class="fa fa-user-o" aria-hidden="true"></i> <?php echo "Hi! ".$current_user->first_name." ".$current_user->last_name; ?></span></li>
                                                 <?php if(class_exists('WooCommerce') ) :
                                                     $my_ac = get_option( 'woocommerce_myaccount_page_id' ); 
                                                     ?>
