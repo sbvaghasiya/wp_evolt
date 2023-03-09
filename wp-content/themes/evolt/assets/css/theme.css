@@ -4298,7 +4298,7 @@ form .select2-container--default .select2-selection .select2-selection__placehol
   right: -3px;
 }
 #evolt-header-wrap.evolt-header-custom-layout6 .evolt-header-top4 {
-  padding: 0;
+  padding: 15px 0;
 }
 #evolt-header-wrap.evolt-header-custom-layout6 .evolt-header-top4 .evolt-topbar-left {
   flex-grow: 1;
