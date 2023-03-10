@@ -3792,7 +3792,7 @@ body {
 	a.remove{
 		margin-left: auto;
 		background-color: #ffffff;
-		padding-bottom: 70px;
+		padding-bottom: 60px;
 	}
 }
 .woocommerce {
@@ -4334,11 +4334,12 @@ body.woocommerce-cart {
 			font-family: 'Jost';
 			font-style: normal;
 			font-weight: 500;
-			font-size: 14px;
-			line-height: 20px;
+			font-size: 13px;
+			line-height: 17px;
 			white-space: nowrap;
-			padding: 5px 24px;
+			padding: 5px 12px;
 			text-transform: uppercase;
+			margin-right: 3px;
 		}
 	}
 }
