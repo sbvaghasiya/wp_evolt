@@ -94,8 +94,7 @@ else{
                                 $thumbnail    = $img['thumbnail'];
                                 ?>
                                 <div class="woocommerce-product-header">
-                                    <a class="woocommerce-product-details" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo wp_kses_post($thumbnail); ?></a>
-                                    <span class="price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
+                                    <a class="woocommerce-product-details" href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo wp_kses_post($thumbnail); ?></a>                                    
                                     <div class="woocommerce-product-meta">
                                         <div class="woocommerce-add-to-cart woocommerce-add-to-cart-grid">
                                         <?php
@@ -133,6 +132,7 @@ else{
                                <h4 class="woocommerce-product--title">
                                     <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
                                 </h4>
+                                <span class="price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
                             </div>
                         </div>
                     </div>

@@ -711,7 +711,7 @@
             z-index: 1;
             overflow: visible;
             padding: 10px 0 10px 0;
-            width: 100px;
+            width: 130px;
             @media #{$max-md} {
                 width: 100%;
                 padding: 15px 15px 0;
@@ -1800,29 +1800,50 @@
                         a{
                             width: 100%;
                             display: flex;
-                            flex-direction: row-reverse;
+                            // flex-direction: row-reverse;
                             justify-content: center;
                             align-items: center;
                             &:not(:last-child){
                                 margin-bottom: 5px;
                             }
+                            i{
+                                margin-left: 5px;
+                            }
                         }
-                    }
+                        &:not(.woocommerce-add-to-cart-grid){
+                            a.added{
+                                display: none;
+                            }
+                        }
+                    }                                                                
                 }
                 .woocommerce-product-content{
                     text-align: center;
+                    padding: 0px 30px 15px 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    min-height: 123px;
                     .woocommerce-product--title{
                         margin-top: 15px;
                         a{
+                            font-family: 'Jost';
+                            font-style: normal;
                             font-weight: 500;
+                            font-size: 21px;
+                            line-height: 28px;
+                            letter-spacing: 0.02em;
+                            text-transform: capitalize;
+                            color: #333333;                            
                         }
-                    }
+                    }                   
                     span.price{
                         font-family: 'Jost';
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 20px;
-                        line-height: 30px;
+                        font-size: 18px;
+                        line-height: 28px;
                         letter-spacing: 0.02em;
                         text-transform: capitalize;
                         color: #9E6F6F;
@@ -1845,8 +1866,8 @@
                                 font-family: 'Jost';
                                 font-style: normal;
                                 font-weight: 500;
-                                font-size: 20px;
-                                line-height: 30px;
+                                font-size: 18px;
+                                line-height: 28px;
                                 letter-spacing: 0.02em;
                                 text-transform: capitalize;
                                 color: #9E6F6F;
@@ -1870,8 +1891,9 @@
                 }
             }
         }
-    }
+    }    
 }
+
 
 .evolt-product-carousel2{
     .carousel-item{
@@ -1910,17 +1932,23 @@
                     }
                 }
                 .woocommerce-product-content{
+                    padding-bottom: 20px;
                     .woocommerce-product--title{
                         margin-bottom: 8px;
                         a{
                             font-family: 'Jost';
                             font-style: normal;
                             font-weight: 500;
-                            font-size: 22px;
+                            font-size: 20px;
                             line-height: 28px;
                             letter-spacing: 0.02em;
                             text-transform: capitalize;
                             color: #333333;
+                        }
+                    }
+                    .woocommerce-product--rating{
+                        .star-rating{
+                            margin-bottom: 10px;
                         }
                     }
                     span.price{
@@ -1942,6 +1970,28 @@
                         ins{
                             span.amount{
                                 color: #9E6F6F;
+                            }
+                        }
+                    }
+                    .woocommerce-add-to-cart {
+                        position: unset;
+                        display: flex !important;
+                        justify-content: center;
+                        opacity: 1;
+                        visibility: visible;
+                        padding-top: 20px;
+                        margin-top: 10px;
+                        border-top: 1px solid #E9E9E9;
+                        a{
+                            line-height: 20px;
+                            height: 40px;
+                            padding: 10px 15px;
+                            border-radius: 3px;
+                            display: flex;
+                            // flex-direction: row-reverse;
+                            i{
+                                margin-left: 5px;
+                                margin-right: 0;
                             }
                         }
                     }
@@ -1976,12 +2026,13 @@
                         text-align: center;
                         width: 100%;
                         .woocommerce-product--title{
+                            margin-bottom: 0;
                             a{
                                 font-family: 'Jost';
                                 font-style: normal;
                                 font-weight: 500;
-                                font-size: 20px;
-                                line-height: 30px;
+                                font-size: 19px;
+                                line-height: 26px;
                                 letter-spacing: 0.02em;
                                 text-transform: capitalize;
                                 color: #333333;
@@ -2011,11 +2062,14 @@
                         }
                         .woocommerce-product-meta{
                             max-height: fit-content;
+                            opacity: 1;
                             padding-bottom: 0;
                             .woocommerce-add-to-cart {
                                 display: block !important;
                                 width: 38px;
                                 height: 38px;
+                                opacity: 1;
+                                visibility: visible;
                                 a{
                                     width: 35px;
                                     height: 35px;
@@ -2036,9 +2090,14 @@
                                     }
                                 }
                             }
-                            .woocommerce-compare{
+                            .woocommerce-wishlist{
+                                display: block !important;
+                            }
+                            .woocommerce-compare,.woocommerce-wishlist{
                                 width: 35px;
                                 height: 35px;
+                                opacity: 1;
+                                visibility: visible;
                                 button{
                                     width: 35px;
                                     height: 35px;
@@ -2108,6 +2167,7 @@
                 }
                 .woocommerce-product-content{
                     .woocommerce-product--title{
+                        flex: 1;
                         a{
                             font-family: 'Jost';
                             font-style: normal;
@@ -2119,21 +2179,46 @@
                             color: #333333;
                         }
                     }
+                    .woocommerce-product-average{
+                        position: unset;
+                        background-color: #fff;
+                        font-family: 'Jost';
+                        font-size: 17px;
+                        line-height: 28px;
+                        color: #333333;
+                        font-weight: 500;
+                        border-radius: 5px;
+                        padding-left: 6px;
+                        padding-right: 8px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;                        
+                        transition: 0.3s cubic-bezier(0.24, 0.74, 0.58, 1);
+                        svg{
+                            height: 17px;
+                            transform: rotate(0deg);
+                            margin-right: 4px;
+                            path{
+                                fill: #ffba0f;
+                            }
+                        }
+                    }
                     .woocommerce-product--flex{
                         span.price{
                             font-family: 'Jost';
                             font-style: normal;
                             font-weight: 600;
-                            font-size: 16px;
+                            font-size: 17px;
                             line-height: 25px;
                             letter-spacing: 0.02em;
                             text-transform: capitalize;
                             color: #9E6F6F;
+                            margin-bottom: 12px;
                             del{
                                 text-decoration: none;
                                 span.amount{
                                     text-decoration-line: line-through;
-                                    color: #B0B0B0;
+                                    color: #555;
                                 }
                             }
                             ins{
@@ -2149,6 +2234,10 @@
                             border: 1px solid #9E6F6F;
                             color: #9E6F6F;
                             border-radius: 3px;
+                            width: 100%;
+                            &::before{
+                                width: 65px;
+                            }
                         }
                     }
                 }
