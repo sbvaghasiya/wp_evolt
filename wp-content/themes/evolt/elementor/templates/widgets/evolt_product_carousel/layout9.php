@@ -135,8 +135,7 @@ else{
                                 <div class="woocommerce-product-content">
                                    <h4 class="woocommerce-product--title">
                                         <a href="<?php echo esc_url(get_permalink( $post->ID )); ?>"><?php echo esc_attr(get_the_title($post->ID)); ?></a>
-                                    </h4>
-                                    <div class="woocommerce-product--price"><?php echo wp_kses_post($product->get_price_html()); ?></div>
+                                    </h4>                                    
                                     <div class="woocommerce-product--rating">
                                         <?php 
                                             $rating  = $product->get_average_rating();
@@ -144,19 +143,22 @@ else{
                                             echo wc_get_rating_html( $rating, $count );
                                         ?>
                                     </div>
-                                    <div class="woocommerce-add-to--cart">
-                                        <?php
-                                        echo apply_filters( 'woocommerce_loop_add_to_cart_link',
-                                            sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button ajax_add_to_cart %s product_type_%s">%s</a>',
-                                                esc_url( $product->add_to_cart_url() ),
-                                                esc_attr( $product->get_id() ),
-                                                esc_attr( $product->get_sku() ),
-                                                $product->is_purchasable() ? 'add_to_cart_button' : '',
-                                                esc_attr( $product->get_type() ),
-                                                esc_html( $product->add_to_cart_text() )
-                                            ),
-                                            $product );
-                                        ?>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="woocommerce-product--price"><?php echo wp_kses_post($product->get_price_html()); ?></div>
+                                        <div class="woocommerce-add-to--cart">
+                                            <?php
+                                            echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+                                                sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button ajax_add_to_cart %s product_type_%s">%s</a>',
+                                                    esc_url( $product->add_to_cart_url() ),
+                                                    esc_attr( $product->get_id() ),
+                                                    esc_attr( $product->get_sku() ),
+                                                    $product->is_purchasable() ? 'add_to_cart_button' : '',
+                                                    esc_attr( $product->get_type() ),
+                                                    esc_html( $product->add_to_cart_text() )
+                                                ),
+                                                $product );
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -135,6 +135,11 @@ else{
                                                     <?php echo do_shortcode('[woosw id="'.esc_attr( $product->get_id() ).'"]'); ?>
                                                 </div>
                                             <?php } ?>
+                                            <?php if (class_exists('WPCleverWoosc')) { ?>
+                                                <div class="woocommerce-compare">
+                                                    <?php echo do_shortcode('[woosc id="'.esc_attr( $product->get_id() ).'"]'); ?>
+                                                </div>
+                                            <?php } ?>
                                         </div>
                                     <?php } else { ?>
                                         <div class="woocommerce--item-readmore">
